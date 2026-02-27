@@ -1,0 +1,35 @@
+---
+title: Dispatch API
+description: AI-powered dispatch suggestions and decisions
+---
+
+<!-- AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. -->
+
+# Dispatch API
+
+Access AI optimization suggestions and record dispatch decisions.
+
+## Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/dispatch/suggestions` | Get AI dispatch suggestions |
+| POST | `/api/dispatch/decisions` | Accept or reject suggestions |
+| POST | `/api/dispatch/cleanup` | Clean up dispatch data |
+| POST | `/api/dispatch/resync` | Resync dispatch state |
+
+## AI Planning
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/aidispatch/sequential-planning` | Batch optimization |
+| POST | `/api/aidispatch/continuous-planning` | Continuous optimization |
+
+## Calendar Integration
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/calendar2/technicians` | Calendar technician view |
+| GET | `/api/calendar2/visits` | Calendar visits |
+| GET | `/api/calendar2/suggestions` | Calendar suggestions |
+| GET | `/api/calendar2/pending` | Pending calendar items |

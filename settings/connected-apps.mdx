@@ -1,0 +1,34 @@
+---
+title: Connected Apps
+description: Manage your FSM platform integrations
+---
+
+<!-- AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. -->
+
+# Connected Apps
+
+Connect and manage integrations with your field service management platforms.
+
+## Available Integrations
+
+| Platform | Auth Method | Status |
+|----------|-------------|--------|
+| FieldCamp | API Token | Active |
+| Jobber | OAuth 2.0 | Active |
+| HouseCallPro | OAuth 2.0 | Active |
+| ServiceTrade | Credentials | Active |
+
+## Managing Connections
+
+Go to **Settings > Connected Apps** to:
+- Connect a new FSM platform
+- View sync status and last sync time
+- Trigger a manual data sync
+- Disconnect a platform
+
+## Sync Behavior
+
+When connected, data syncs automatically:
+- **Jobs** sync in real-time via webhooks (when available) or periodically
+- **Technicians** sync during initial connection and on-demand
+- **Assignments** push back to your FSM when dispatched

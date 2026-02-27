@@ -1,0 +1,31 @@
+---
+title: Webhooks
+description: Receive real-time job notifications from FSM platforms
+---
+
+<!-- AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. -->
+
+# Webhooks
+
+AI Dispatcher receives real-time job data from FSM platforms via webhooks.
+
+## Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/webhook/fieldcamp/jobs` | Receive FieldCamp job webhook |
+| POST | `/api/webhook/fieldcamp/jobs/preview` | Preview webhook payload |
+
+## Setting Up Webhooks
+
+### FieldCamp
+
+1. Go to your FieldCamp admin settings
+2. Navigate to the Webhooks section
+3. Add a new webhook pointing to: `https://your-domain.com/api/webhook/fieldcamp/jobs`
+4. Select the job events you want to receive (created, updated, assigned)
+5. Save and test the connection
+
+## Payload Format
+
+Webhook payloads include job details, customer information, and scheduling requirements. See the AI Dispatcher integration guide for the complete payload schema.

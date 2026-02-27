@@ -1,0 +1,29 @@
+---
+title: Billing API
+description: Subscription management and credits
+---
+
+<!-- AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. -->
+
+# Billing API
+
+Manage subscriptions and AI dispatch credits.
+
+## Subscription Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/billing/checkout` | Create checkout session |
+| GET | `/api/billing/subscription` | Get subscription details |
+| PUT | `/api/billing/subscription` | Update subscription |
+| GET | `/api/billing/portal` | Open customer portal |
+
+## Credits
+
+AI dispatch optimization uses a credit-based system.
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/credits/balance` | Get credit balance |
+| GET | `/api/credits/history` | View transaction history |
+| POST | `/api/credits/purchase` | Purchase more credits |

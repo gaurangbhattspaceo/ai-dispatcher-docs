@@ -1,0 +1,33 @@
+---
+title: Jobs API
+description: Create, read, update, and delete jobs
+---
+
+<!-- AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. -->
+
+# Jobs API
+
+Manage service jobs programmatically.
+
+## Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/jobs` | List all jobs |
+| POST | `/api/jobs` | Create a job |
+| GET | `/api/jobs/:id` | Get job details |
+| PUT | `/api/jobs/:id` | Update a job |
+| DELETE | `/api/jobs/:id` | Delete a job |
+| POST | `/api/jobs/import` | Import jobs from CSV |
+| GET | `/api/jobs/export` | Export jobs |
+| GET | `/api/jobs/visits` | Get job visits |
+
+## FieldCamp Integration
+
+Jobs synced from FieldCamp are also available via:
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/fieldcamp/jobs` | Get FieldCamp jobs |
+| GET | `/api/fieldcamp/jobs/:id` | Get FieldCamp job details |
+| GET | `/api/fieldcamp/jobs/pending` | Get pending FieldCamp jobs |

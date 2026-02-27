@@ -1,0 +1,28 @@
+---
+title: Service Areas API
+description: Define and manage geographic service zones
+---
+
+<!-- AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. -->
+
+# Service Areas API
+
+Define geographic zones where your technicians operate.
+
+## Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/service-areas` | List all service areas |
+| POST | `/api/service-areas` | Create a service area |
+| GET | `/api/service-areas/:id` | Get service area details |
+| PUT | `/api/service-areas/:id` | Update a service area |
+| DELETE | `/api/service-areas/:id` | Delete a service area |
+| GET | `/api/service-areas/status` | Check service area status |
+
+## Area Types
+
+Service areas support three boundary types:
+- **Radius** — Circle around a center point (lat/lng + miles)
+- **Polygon** — Custom geographic boundary (array of coordinates)
+- **Zip Code** — List of covered postal codes

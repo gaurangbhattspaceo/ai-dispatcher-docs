@@ -1,0 +1,37 @@
+---
+title: Authentication
+description: API authentication and session management
+---
+
+<!-- AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. -->
+
+# Authentication
+
+All API requests require authentication via JWT tokens.
+
+## Login
+
+```bash
+POST /api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "your-password"
+}
+```
+
+Returns a JWT token to include in subsequent requests as a Bearer token.
+
+## Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/login` | User login |
+| POST | `/api/auth/signup` | Create account |
+| POST | `/api/auth/logout` | End session |
+| GET | `/api/auth/me` | Get current user |
+| PUT | `/api/auth/profile` | Update profile |
+| POST | `/api/auth/forgot-password` | Request password reset |
+| POST | `/api/auth/reset-password` | Reset with token |
+| POST | `/api/auth/change-password` | Change password |

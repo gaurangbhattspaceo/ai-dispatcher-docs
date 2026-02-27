@@ -1,0 +1,27 @@
+---
+title: FieldCamp
+description: Connect AI Dispatcher with FieldCamp
+---
+
+<!-- AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. -->
+
+# FieldCamp Integration
+
+Connect your FieldCamp account to automatically sync jobs, technicians, and dispatch assignments.
+
+## Setup
+
+1. Go to **Settings > Connected Apps**
+2. Click **Connect FieldCamp**
+3. Enter your FieldCamp API token
+4. Select which data to sync (jobs, technicians, or both)
+
+## How It Works
+
+- **Jobs** are pulled from FieldCamp via webhook or periodic sync
+- **Technicians** and their profiles are imported automatically
+- **Dispatch assignments** are pushed back to FieldCamp after approval
+
+## Webhook Configuration
+
+For real-time job syncing, configure a webhook in your FieldCamp settings pointing to your AI Dispatcher webhook endpoint. See the [Webhooks API](/api/webhooks) for details.
