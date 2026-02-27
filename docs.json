@@ -11,7 +11,7 @@
   "navigation": [
     {
       "group": "Getting Started",
-      "pages": ["introduction", "quickstart", "setup"]
+      "pages": ["index", "quickstart", "setup"]
     },
     {
       "group": "Dashboard",
