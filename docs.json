@@ -8,55 +8,73 @@
     "dark": "#1D4ED8"
   },
   "favicon": "/favicon.svg",
-  "navigation": [
-    {
-      "group": "Getting Started",
-      "pages": ["index", "quickstart", "setup"]
-    },
-    {
-      "group": "Dashboard",
-      "pages": [
-        "dashboard/overview",
-        "dashboard/jobs",
-        "dashboard/technicians",
-        "dashboard/calendar",
-        "dashboard/ai-dispatch",
-        "dashboard/capacity"
-      ]
-    },
-    {
-      "group": "Integrations",
-      "pages": [
-        "integrations/fieldcamp",
-        "integrations/jobber",
-        "integrations/housecallpro",
-        "integrations/servicetrade"
-      ]
-    },
-    {
-      "group": "API Reference",
-      "pages": [
-        "api/authentication",
-        "api/jobs",
-        "api/technicians",
-        "api/service-areas",
-        "api/dispatch",
-        "api/webhooks",
-        "api/billing"
-      ]
-    },
-    {
-      "group": "Settings",
-      "pages": [
-        "settings/general",
-        "settings/company",
-        "settings/billing",
-        "settings/connected-apps",
-        "settings/ai-dispatcher"
-      ]
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "index",
+              "quickstart",
+              "setup"
+            ]
+          },
+          {
+            "group": "Dashboard",
+            "pages": [
+              "dashboard/overview",
+              "dashboard/jobs",
+              "dashboard/technicians",
+              "dashboard/calendar",
+              "dashboard/ai-dispatch",
+              "dashboard/capacity"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/fieldcamp",
+              "integrations/jobber",
+              "integrations/housecallpro",
+              "integrations/servicetrade"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "settings/general",
+              "settings/company",
+              "settings/billing",
+              "settings/connected-apps",
+              "settings/ai-dispatcher"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API Documentation",
+            "pages": [
+              "api/authentication",
+              "api/jobs",
+              "api/technicians",
+              "api/service-areas",
+              "api/dispatch",
+              "api/webhooks",
+              "api/billing"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/gaurangbhattspaceo"
     }
-  ],
-  "footerSocials": {
-    "github": "https://github.com/gaurangbhattspaceo"
   }
 }
