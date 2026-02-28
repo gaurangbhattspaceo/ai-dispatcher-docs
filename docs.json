@@ -30,7 +30,8 @@
               "dashboard/calendar",
               "dashboard/ai-dispatch",
               "dashboard/ai-chat",
-              "dashboard/capacity"
+              "dashboard/capacity",
+              "dashboard/logs"
             ]
           },
           {

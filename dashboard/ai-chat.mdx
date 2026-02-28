@@ -21,20 +21,41 @@ The AI assistant has direct access to your live schedule and optimization engine
 - **Request changes:** "Move the 2 PM appointment to someone closer to downtown."
 - **Explain scores:** "Why does this assignment have a low confidence score?"
 
-## Tool Indicators
+## What Happens While the AI Thinks
 
-While the AI is working, you'll see small status messages below the latest response showing what it's doing in real time:
+While the AI works on your question, you'll see a typing indicator (three animated dots) and small status labels showing exactly what it's doing in real time:
 
-| Indicator | What It Means |
-|-----------|--------------|
-| 🔧 Checking schedule... | Reading the current master schedule |
+| Status Label | What It Means |
+|---|---|
+| 🔧 Looking up the dispatch board... | Reading your current schedule |
+| 🔧 Finding job details... | Pulling up a specific job's information |
+| 🔧 Checking technician availability... | Looking at who's free and when |
+| 🔧 Reviewing route summary... | Calculating travel times and routes |
 | 🔧 Preparing changes... | Building a plan modification |
 | 🔧 Confirming update... | Writing the accepted change back to the plan |
-| 🔧 Analyzing constraints... | Examining optimization scores and violations |
+| 🔧 Analyzing constraints... | Examining optimization scores and rule violations |
 | 🔧 Checking feasibility... | Testing whether a requested change is possible |
 | 🔧 Processing... | General computation in progress |
 
-These indicators disappear once the AI has finished the step and is ready to respond.
+These status labels disappear once the AI has finished each step and is ready to reply.
+
+## If Something Goes Wrong
+
+The AI Chat will show a friendly message if it can't respond. Here's what each one means and what to do:
+
+| Message | What It Means | What to Do |
+|---|---|---|
+| "Temporarily unavailable, try again in a few minutes" | The AI service is under heavy load | Wait a moment and send your message again |
+| "Undergoing maintenance, try again later" | Scheduled maintenance is in progress | Try again in a little while |
+| "Request timed out — try again" | Your question took too long to process | Break it into smaller questions or try again |
+| "Too many requests — wait a moment" | You've sent a lot of messages quickly | Pause for 30 seconds and try again |
+| "Session expired — please log in again" | Your login session ended | Refresh the page and log in |
+| "Not configured for your organization" | AI Chat isn't set up yet for your account | Contact your administrator |
+| "Service is offline" | The AI service is unreachable | Contact your administrator |
+
+<Note>
+Most errors are temporary. If the same error keeps appearing, contact your account administrator.
+</Note>
 
 ## How It Works
 

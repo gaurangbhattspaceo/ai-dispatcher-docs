@@ -1,0 +1,76 @@
+---
+title: Server Logs
+sidebarTitle: Logs
+description: View real-time AI Dispatcher activity and troubleshoot errors
+icon: terminal
+---
+
+{/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
+
+The Logs page lets you watch what's happening inside AI Dispatcher in real time — useful when something isn't working as expected or when your administrator needs to diagnose a problem.
+
+Navigate to **Dashboard → Logs** to open it.
+
+<Note>
+This page is mainly for troubleshooting. Most dispatch managers won't need it day-to-day — but it's handy to have when something goes wrong.
+</Note>
+
+## What You'll See
+
+The logs panel shows a scrolling feed of activity from the AI Dispatcher server. Each line is color-coded so you can quickly spot problems:
+
+| Color | What It Means |
+|---|---|
+| **Red** | An error or failure — something didn't work |
+| **Yellow** | A warning — something unusual that may need attention |
+| **Blue** | AI Dispatch activity — suggestions, assignments, and planning steps |
+| **Purple** | Webhook events — incoming job notifications from your scheduling software |
+| **Gray** | Normal background activity |
+
+## The Controls
+
+At the top of the page you'll find four buttons:
+
+- **Resume / Pause** — Start or stop the live log feed. The feed starts paused to save resources. Click **Resume** to begin watching.
+- **Refresh** — Grab the latest logs right now (useful when paused).
+- **Download** — Save all visible logs to a `.txt` file on your computer. Handy if your administrator needs to review them.
+- **Clear** — Wipe the screen. This doesn't delete any server logs — it just clears your view.
+
+You'll also see a **Filter** box in the top right. Type any word to show only log lines that contain it. For example, type `error` to see only errors, or `webhook` to see only incoming job events.
+
+## How to Use It for Troubleshooting
+
+<Steps>
+  <Step title="Open the Logs page">
+    Go to **Dashboard → Logs**.
+  </Step>
+  <Step title="Click Resume">
+    The feed starts paused. Click the **Resume** button so logs start flowing in.
+  </Step>
+  <Step title="Reproduce the problem">
+    Go back to the page or action that isn't working, and do whatever triggered the issue.
+  </Step>
+  <Step title="Come back to Logs and look for red lines">
+    Red lines are errors. They usually describe what went wrong. Type `error` in the filter box to show only those lines.
+  </Step>
+  <Step title="Download if needed">
+    If your administrator needs to take a look, click **Download** and send them the file.
+  </Step>
+</Steps>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="The logs panel is blank — where are the logs?">
+    Click the **Resume** button first. The feed starts paused to save resources. If logs still don't appear after clicking Resume, it may mean no activity has happened yet — try triggering an action (like running the AI Dispatch) and then click **Refresh**.
+  </Accordion>
+  <Accordion title="I see a lot of red lines — is something broken?">
+    A few red lines now and then are normal, especially during busy periods. If you see a constant stream of red, or if the AI Dispatch isn't working at all, that's worth sharing with your administrator. Use the **Download** button to save the log and send it to them.
+  </Accordion>
+  <Accordion title="Will clearing the logs delete anything important?">
+    No. The **Clear** button only clears your view of the logs on this screen. The underlying server logs are stored separately and aren't affected.
+  </Accordion>
+  <Accordion title="What are the purple 'webhook' lines?">
+    Purple lines appear when your scheduling software (like FieldCamp, Jobber, or HouseCall Pro) sends a new job into AI Dispatcher. If you create a job in your FSM and you want to confirm AI Dispatcher received it, look for a purple webhook line.
+  </Accordion>
+</AccordionGroup>
