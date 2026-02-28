@@ -11,11 +11,15 @@ The AI Dispatch page is where you review, approve, and manage AI-generated job a
 
 Navigate to **Dashboard → AI Dispatch** to open the dispatch board.
 
+<Frame caption="The AI Dispatch page showing mode controls, data source selector, and configuration options">
+  <img src="/images/screenshots/ai-dispatch-overview.png" alt="AI Dispatch page overview" />
+</Frame>
+
 ## How It Works
 
 <Steps>
   <Step title="Jobs enter the queue">
-    Pending jobs are pulled from your FSM platform (or submitted manually). Each job is checked for dispatch readiness — valid address, required skills, time window.
+    Pending jobs are pulled from your scheduling software (or uploaded via CSV). Each job is checked for dispatch readiness — valid address, required skills, time window.
   </Step>
   <Step title="AI runs optimization">
     The optimizer considers technician skills, current location, availability, travel time, workload balance, and customer preferences to produce ranked assignment suggestions.
@@ -24,18 +28,77 @@ Navigate to **Dashboard → AI Dispatch** to open the dispatch board.
     Each suggestion appears with the recommended technician, confidence score, estimated arrival, and AI reasoning. You can accept, reject, or reassign.
   </Step>
   <Step title="Accepted assignments sync">
-    Accepted suggestions are written back to your connected FSM automatically — no manual entry needed.
+    Accepted suggestions are written back to your connected scheduling software automatically — no manual entry needed.
   </Step>
 </Steps>
 
-## Optimization Modes
+## Assist Mode vs Auto Mode
 
-| Mode | When to Use |
-|------|-------------|
-| **Sequential Planning** | Optimize all pending jobs in one batch — best for morning planning runs |
-| **Continuous Planning** | Re-optimize as new jobs arrive throughout the day — best for high-volume operations |
+At the top of the page, you'll see two mode buttons: **Assist Mode** and **Auto Mode**.
 
-Switch between modes using the controls at the top of the AI Dispatch page.
+<Frame caption="The Assist Mode / Auto Mode toggle at the top of the AI Dispatch page">
+  <img src="/images/screenshots/ai-dispatch-auto-mode.png" alt="Mode toggle between Assist and Auto" />
+</Frame>
+
+<Tabs>
+  <Tab title="Assist Mode">
+    **Assist Mode** puts you in control. The AI waits for you to click **Generate Schedule** before running optimization. Use this when you want to:
+    - Plan your whole day at once each morning
+    - Make manual changes before running the optimizer
+    - Review everything before any assignments go out
+    
+    This is the default mode and works well for most dispatch managers.
+  </Tab>
+  <Tab title="Auto Mode">
+    **Auto Mode** keeps the schedule continuously optimized throughout the day. Once enabled, the AI monitors for new jobs, cancellations, and schedule changes — then automatically re-runs optimization when it detects something has changed.
+    
+    When Auto Mode is active, a floating **Auto Mode Monitor** widget appears in the bottom-right corner of the page. It shows you:
+    - 🟢 **Monitoring** — watching for changes
+    - 🟡 **Processing** — currently re-optimizing
+    - ⚫ **Idle** — paused or outside business hours
+    - **Last Run** and **Next Run** times
+    - A live activity log of every change detected and re-optimization triggered
+
+    Use Auto Mode for high-volume days when jobs come in throughout the day and you need the schedule to stay optimal without constant manual runs.
+    
+    <Note>Auto Mode only runs during business hours. Outside your business hours, it pauses automatically and resumes the next morning.</Note>
+  </Tab>
+</Tabs>
+
+## Choosing Your Data Source
+
+Below the mode toggle, you'll see a **Data Source** selector.
+
+<Frame caption="The Data Source selector lets you switch between live FieldCamp data and a CSV file upload">
+  <img src="/images/screenshots/ai-dispatch-csv-upload.png" alt="Data Source selector with CSV Upload option" />
+</Frame>
+
+<Tabs>
+  <Tab title="FieldCamp API (default)">
+    The AI Dispatch page pulls live jobs and technician data directly from your connected scheduling software. Any accepted assignments are automatically written back — no extra steps.
+    
+    This is the recommended option for day-to-day dispatching.
+  </Tab>
+  <Tab title="CSV Upload">
+    If you're not connected to FieldCamp yet, or you want to test the optimizer with custom data, you can upload your own CSV files instead.
+    
+    You'll see two upload cards:
+    - **Jobs CSV** — your list of jobs to be dispatched
+    - **Technicians CSV** — your team members and their availability
+    
+    Click **Template** on either card to download a pre-formatted CSV file showing exactly what columns are expected. Fill it in and drag it into the upload area (or click to browse).
+    
+    <Tip>Use CSV mode for planning dry runs — load last week's schedule and see how the AI would have optimized it differently.</Tip>
+
+    **Jobs CSV columns:**
+    `jobNumber`, `jobType`, `customer`, `customerPhone`, `streetAddress`, `city`, `state`, `zipCode`, `latitude`, `longitude`, `startDateTime`, `endDateTime`, `serviceDuration`, `requiredSkills`, `priority`, `status`, `description`
+
+    **Technicians CSV columns:**
+    `id`, `name`, `email`, `phone`, `skills`, `homeLatitude`, `homeLongitude`, `homeAddress`, `homeCity`, `homeState`, `homeZipCode`  
+    Availability by day: `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`, `sunday`  
+    *(Format each day as `HH:mm-HH:mm`, e.g. `08:00-17:00`, or `off` for days off.)*
+  </Tab>
+</Tabs>
 
 ## Reviewing Suggestions
 
@@ -49,15 +112,15 @@ Each AI suggestion card shows:
 
 ## Views
 
-Switch between different layouts using the **View Switcher** in the top toolbar:
+Switch between different layouts using the view tabs that appear after generating a schedule:
 
 | View | Description |
 |------|-------------|
-| **Schedule Table** | Grid view showing all technicians and their day's assignments |
-| **Timeline** | Horizontal timeline with job blocks per technician, color-coded by status |
-| **Map** | Geographic view showing technician locations, job sites, and route lines |
-| **Live Day** | Real-time view showing current technician status and schedule gaps |
+| **Dashboard** | Default card view showing all assignment suggestions grouped by confidence |
 | **Dual Panel** | Side-by-side: unassigned jobs on the left, technician schedules on the right |
+| **Table** | Compact data table — best for large numbers of jobs |
+| **Cards** | Full-detail cards for reviewing individual assignments |
+| **Technician Schedule** | Per-technician view of the full day's assignments |
 
 ## Batch Actions
 
@@ -90,6 +153,26 @@ Mark technicians as unavailable for specific time blocks (lunch, training, PTO) 
 ## AI Reasoning Panel
 
 Click the **Reasoning** button on any suggestion to open a detailed explanation of the optimizer's decision, including:
-- Which constraints were evaluated
+- Which rules were evaluated
 - Why alternative technicians ranked lower
-- Specific penalty scores for travel time, skill match, and workload
+- Specific scores for travel time, skill match, and workload
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="What's the difference between Assist Mode and Auto Mode?">
+    In Assist Mode, you click "Generate Schedule" whenever you want the AI to run. In Auto Mode, the AI watches for schedule changes throughout the day and re-optimizes automatically. Most teams start with Assist Mode and switch to Auto Mode once they're comfortable with the AI's suggestions.
+  </Accordion>
+  <Accordion title="Can I use CSV upload without a FieldCamp connection?">
+    Yes! Select **CSV Upload** as your data source and upload your jobs and technicians files. Download the templates from the upload cards to make sure your CSV columns match what the optimizer expects.
+  </Accordion>
+  <Accordion title="What does the Auto Mode Monitor widget show?">
+    The floating widget in the bottom-right corner shows whether Auto Mode is actively monitoring (green dot), currently re-optimizing (yellow), or idle (gray). It also shows when the last run happened, when the next one is scheduled, and a log of recent activity like "Change detected — 2 new jobs added" or "Re-optimization completed — 8 assignments updated."
+  </Accordion>
+  <Accordion title="Will Auto Mode dispatch jobs without me reviewing them?">
+    Auto Mode re-runs the optimization and updates the suggestions on screen. You still review and accept assignments. The only exception is if you've enabled automatic acceptance in your AI settings — but that's off by default.
+  </Accordion>
+  <Accordion title="What if I get an error generating the schedule?">
+    Check that your jobs have valid addresses and time windows, and that your technicians have their skills and availability set up. The error message at the top of the page will tell you what's missing.
+  </Accordion>
+</AccordionGroup>
