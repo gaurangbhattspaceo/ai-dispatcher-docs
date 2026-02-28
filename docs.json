@@ -29,6 +29,7 @@
               "dashboard/technicians",
               "dashboard/calendar",
               "dashboard/ai-dispatch",
+              "dashboard/ai-chat",
               "dashboard/capacity"
             ]
           },

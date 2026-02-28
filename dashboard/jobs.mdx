@@ -1,30 +1,69 @@
 ---
 title: Jobs
-description: Manage and track all service jobs
+description: Manage, review, and dispatch all service jobs
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
 # Jobs
 
-The Jobs page displays all service jobs in your system — imported from your FSM platform or created manually.
+The Jobs page is your dispatch queue — it shows all jobs imported from your FSM platform, their readiness for dispatch, and the results of AI optimization.
 
-## Job List
+## Queue Tabs
 
-View all jobs with filtering and sorting by status, priority, technician, service area, and date.
+Jobs are organized into three tabs:
 
-## Creating Jobs
+| Tab | What It Shows |
+|-----|--------------|
+| **Queue** | Jobs synced from your FSM that are ready (or pending readiness) for dispatch |
+| **Dispatched** | Jobs sent to the AI optimizer — shows assigned technician and timing |
+| **Confirmed** | Jobs with accepted AI suggestions that have been written back to your FSM |
 
-Jobs can be added in three ways:
-1. **Automatic sync** from your connected FSM platform
-2. **Manual creation** via the "New Job" button
-3. **CSV import** for bulk job creation
+## Syncing Jobs
+
+Click **Sync from [FSM name]** to pull the latest jobs and technicians from your connected platform. The sync also checks each job's dispatch readiness (skills matched, time window valid, location geocoded).
+
+## Batch Dispatch
+
+<Steps>
+  <Step title="Select jobs">
+    On the **Queue** tab, check the boxes next to the jobs you want to dispatch. You can select any combination of ready and not-yet-ready jobs.
+  </Step>
+  <Step title="Send to optimizer">
+    Click the **Dispatch Selected** button that appears above the list. If no individual jobs are selected, the button changes to **Dispatch All Ready** — which sends all ready jobs in one batch.
+  </Step>
+  <Step title="Review suggestions">
+    Switch to the **AI Dispatch** page to review the optimization results and accept or reject each assignment.
+  </Step>
+</Steps>
+
+<Tip>
+Jobs flagged as **Ready** have passed all pre-dispatch checks. Jobs marked **Not Ready** are missing required data (e.g., no matching skill or unresolved address). Fix the underlying issue in your FSM and re-sync to make them ready.
+</Tip>
+
+## Dispatched Tab
+
+Once jobs are sent to the optimizer, they appear in the **Dispatched** tab. Each row shows:
+
+- Job title and customer details
+- The technician the AI assigned
+- Estimated arrival and departure time
+- Dispatch timestamp
 
 ## Job Details
 
-Each job includes:
-- Customer information and address
-- Required skills and equipment
-- Time window and priority
-- Assigned technician (if dispatched)
-- Job status and history
+Each job row includes:
+- Customer name and service address
+- Required skills and job type
+- Time window (scheduled date/time)
+- Current status badge
+- Sync timestamp
+
+## Job Status Badges
+
+| Badge | Meaning |
+|-------|---------|
+| **Ready** | All required data is present; job can be dispatched |
+| **Not Ready** | Missing data — address, skills, or time window needs attention |
+| **Dispatched** | Sent to the AI optimizer |
+| **Confirmed** | AI suggestion accepted and written back to FSM |

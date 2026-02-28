@@ -1,0 +1,610 @@
+{
+  "scannedAt": "2026-02-28T04:22:01.049Z",
+  "codebasePath": "/home/ubuntu/ai-dispatcher",
+  "routes": [
+    {
+      "path": "/",
+      "file": "src/app/page.tsx"
+    },
+    {
+      "path": "/auth/error",
+      "file": "src/app/auth/error/page.tsx"
+    },
+    {
+      "path": "/auth/login",
+      "file": "src/app/auth/login/page.tsx"
+    },
+    {
+      "path": "/dashboard",
+      "file": "src/app/dashboard/page.tsx"
+    },
+    {
+      "path": "/dashboard/ai-chat",
+      "file": "src/app/dashboard/ai-chat/page.tsx"
+    },
+    {
+      "path": "/dashboard/ai-dispatch",
+      "file": "src/app/dashboard/ai-dispatch/page.tsx"
+    },
+    {
+      "path": "/dashboard/calendar",
+      "file": "src/app/dashboard/calendar/page.tsx"
+    },
+    {
+      "path": "/dashboard/capacity",
+      "file": "src/app/dashboard/capacity/page.tsx"
+    },
+    {
+      "path": "/dashboard/debug",
+      "file": "src/app/dashboard/debug/page.tsx"
+    },
+    {
+      "path": "/dashboard/jobs",
+      "file": "src/app/dashboard/jobs/page.tsx"
+    },
+    {
+      "path": "/dashboard/logs",
+      "file": "src/app/dashboard/logs/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings",
+      "file": "src/app/dashboard/settings/page.tsx"
+    },
+    {
+      "path": "/dashboard/technicians",
+      "file": "src/app/dashboard/technicians/page.tsx"
+    },
+    {
+      "path": "/dashboard/webhook-test",
+      "file": "src/app/dashboard/webhook-test/page.tsx"
+    }
+  ],
+  "apiEndpoints": [
+    {
+      "path": "/api/admin/queue/clear",
+      "methods": [
+        "DELETE",
+        "GET"
+      ],
+      "file": "src/app/api/admin/queue/clear/route.ts"
+    },
+    {
+      "path": "/api/agent/chat",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/agent/chat/route.ts"
+    },
+    {
+      "path": "/api/aidispatch/continuous-planning",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/aidispatch/continuous-planning/route.ts"
+    },
+    {
+      "path": "/api/aidispatch/sequential-planning",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/aidispatch/sequential-planning/route.ts"
+    },
+    {
+      "path": "/api/auth/dev-login",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/auth/dev-login/route.ts"
+    },
+    {
+      "path": "/api/auth/logout",
+      "methods": [
+        "POST",
+        "GET"
+      ],
+      "file": "src/app/api/auth/logout/route.ts"
+    },
+    {
+      "path": "/api/auth/me",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/auth/me/route.ts"
+    },
+    {
+      "path": "/api/auth/sso",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/auth/sso/route.ts"
+    },
+    {
+      "path": "/api/debug/requests",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "file": "src/app/api/debug/requests/route.ts"
+    },
+    {
+      "path": "/api/dispatch/cleanup",
+      "methods": [
+        "DELETE",
+        "POST",
+        "GET"
+      ],
+      "file": "src/app/api/dispatch/cleanup/route.ts"
+    },
+    {
+      "path": "/api/dispatch/decisions",
+      "methods": [
+        "POST",
+        "PATCH"
+      ],
+      "file": "src/app/api/dispatch/decisions/route.ts"
+    },
+    {
+      "path": "/api/dispatch/from-ai-agent/optimize",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/dispatch/from-ai-agent/optimize/route.ts"
+    },
+    {
+      "path": "/api/dispatch/from-ai-agent/plan",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/dispatch/from-ai-agent/plan/route.ts"
+    },
+    {
+      "path": "/api/dispatch/resync",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/dispatch/resync/route.ts"
+    },
+    {
+      "path": "/api/dispatch/suggestions",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/dispatch/suggestions/route.ts"
+    },
+    {
+      "path": "/api/fieldcamp/companyBusinessInfo",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/fieldcamp/companyBusinessInfo/route.ts"
+    },
+    {
+      "path": "/api/fieldcamp/companyInfo",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/fieldcamp/companyInfo/route.ts"
+    },
+    {
+      "path": "/api/fieldcamp/jobs",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/fieldcamp/jobs/route.ts"
+    },
+    {
+      "path": "/api/fieldcamp/jobs/[id]",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/fieldcamp/jobs/[id]/route.ts"
+    },
+    {
+      "path": "/api/fieldcamp/jobs/bulk-dispatch",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/fieldcamp/jobs/bulk-dispatch/route.ts"
+    },
+    {
+      "path": "/api/fieldcamp/jobs/pending",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/fieldcamp/jobs/pending/route.ts"
+    },
+    {
+      "path": "/api/fieldcamp/teams",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/fieldcamp/teams/route.ts"
+    },
+    {
+      "path": "/api/fieldcamp/visits",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/fieldcamp/visits/route.ts"
+    },
+    {
+      "path": "/api/fieldcamp/visits/calendar",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/fieldcamp/visits/calendar/route.ts"
+    },
+    {
+      "path": "/api/health",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/health/route.ts"
+    },
+    {
+      "path": "/api/housecallpro/oauth/callback",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/housecallpro/oauth/callback/route.ts"
+    },
+    {
+      "path": "/api/housecallpro/oauth/start",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/housecallpro/oauth/start/route.ts"
+    },
+    {
+      "path": "/api/jobber/oauth/callback",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/jobber/oauth/callback/route.ts"
+    },
+    {
+      "path": "/api/jobber/oauth/start",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/jobber/oauth/start/route.ts"
+    },
+    {
+      "path": "/api/logs",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/logs/route.ts"
+    },
+    {
+      "path": "/api/monitoring",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/monitoring/route.ts"
+    },
+    {
+      "path": "/api/organization/dispatch",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/organization/dispatch/route.ts"
+    },
+    {
+      "path": "/api/organization/dispatch-queue",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/organization/dispatch-queue/route.ts"
+    },
+    {
+      "path": "/api/organization/info",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/organization/info/route.ts"
+    },
+    {
+      "path": "/api/organization/settings",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "file": "src/app/api/organization/settings/route.ts"
+    },
+    {
+      "path": "/api/organization/sync",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/organization/sync/route.ts"
+    },
+    {
+      "path": "/api/organization/timezone",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/organization/timezone/route.ts"
+    },
+    {
+      "path": "/api/results/[requestId]",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/results/[requestId]/route.ts"
+    },
+    {
+      "path": "/api/servicetrade/auth/connect",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/servicetrade/auth/connect/route.ts"
+    },
+    {
+      "path": "/api/v1/fsm/decisions",
+      "methods": [
+        "POST",
+        "PATCH"
+      ],
+      "file": "src/app/api/v1/fsm/decisions/route.ts"
+    },
+    {
+      "path": "/api/v1/fsm/suggestions",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/v1/fsm/suggestions/route.ts"
+    },
+    {
+      "path": "/api/webhook/fieldcamp/jobs",
+      "methods": [
+        "POST",
+        "GET"
+      ],
+      "file": "src/app/api/webhook/fieldcamp/jobs/route.ts"
+    },
+    {
+      "path": "/api/webhook/fieldcamp/jobs/preview",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/webhook/fieldcamp/jobs/preview/route.ts"
+    },
+    {
+      "path": "/api/webhook/housecallpro/events",
+      "methods": [
+        "POST",
+        "GET"
+      ],
+      "file": "src/app/api/webhook/housecallpro/events/route.ts"
+    },
+    {
+      "path": "/api/webhook/housecallpro/queue",
+      "methods": [
+        "POST",
+        "GET"
+      ],
+      "file": "src/app/api/webhook/housecallpro/queue/route.ts"
+    },
+    {
+      "path": "/api/webhook/jobber/events",
+      "methods": [
+        "POST",
+        "GET"
+      ],
+      "file": "src/app/api/webhook/jobber/events/route.ts"
+    },
+    {
+      "path": "/api/webhook/jobber/queue",
+      "methods": [
+        "POST",
+        "GET"
+      ],
+      "file": "src/app/api/webhook/jobber/queue/route.ts"
+    },
+    {
+      "path": "/api/webhook/servicetrade/events",
+      "methods": [
+        "POST",
+        "GET"
+      ],
+      "file": "src/app/api/webhook/servicetrade/events/route.ts"
+    },
+    {
+      "path": "/api/webhook/servicetrade/queue",
+      "methods": [
+        "POST",
+        "GET"
+      ],
+      "file": "src/app/api/webhook/servicetrade/queue/route.ts"
+    }
+  ],
+  "components": [
+    {
+      "domain": "ai-chat",
+      "count": 10,
+      "files": [
+        "src/components/ai-chat/ChatCodeBlock.tsx",
+        "src/components/ai-chat/ChatContainer.tsx",
+        "src/components/ai-chat/ChatEmptyState.tsx",
+        "src/components/ai-chat/ChatHeader.tsx",
+        "src/components/ai-chat/ChatInput.tsx",
+        "src/components/ai-chat/ChatMessage.tsx",
+        "src/components/ai-chat/ChatMessageContent.tsx",
+        "src/components/ai-chat/ChatMessageList.tsx",
+        "src/components/ai-chat/ChatThinkingIndicator.tsx",
+        "src/components/ai-chat/ChatToolIndicator.tsx"
+      ]
+    },
+    {
+      "domain": "ai-dispatch",
+      "count": 51,
+      "files": [
+        "src/components/ai-dispatch/AIReasoning.tsx",
+        "src/components/ai-dispatch/AIReasoningPanel.tsx",
+        "src/components/ai-dispatch/AssignmentCard.tsx",
+        "src/components/ai-dispatch/AssignmentDataTable.tsx",
+        "src/components/ai-dispatch/AutoModeActivityLog.tsx",
+        "src/components/ai-dispatch/AutoModeMonitorWidget.tsx",
+        "src/components/ai-dispatch/AutoModeStatusPanel.tsx",
+        "src/components/ai-dispatch/BatchActionBar.tsx",
+        "src/components/ai-dispatch/BatchActionPanel.tsx",
+        "src/components/ai-dispatch/CompactAssignmentList.tsx",
+        "src/components/ai-dispatch/ConfidenceScore.tsx",
+        "src/components/ai-dispatch/ConfirmationDialog.tsx",
+        "src/components/ai-dispatch/ConflictDetails.tsx",
+        "src/components/ai-dispatch/ConflictResolver.tsx",
+        "src/components/ai-dispatch/DailyScheduleRow.tsx",
+        "src/components/ai-dispatch/DateRangeSelector.tsx",
+        "src/components/ai-dispatch/DualPanelView.tsx",
+        "src/components/ai-dispatch/FloatingActionBar.tsx",
+        "src/components/ai-dispatch/InlineJobActions.tsx",
+        "src/components/ai-dispatch/ReassignmentDialog.tsx",
+        "src/components/ai-dispatch/ScheduleTableView.tsx",
+        "src/components/ai-dispatch/SmartAssignmentCard.tsx",
+        "src/components/ai-dispatch/TechnicianRow.tsx",
+        "src/components/ai-dispatch/TechnicianScheduleView.tsx",
+        "src/components/ai-dispatch/UnassignedJobsPanel.tsx",
+        "src/components/ai-dispatch/UnavailablePeriodsManager.tsx",
+        "src/components/ai-dispatch/UtilizationBar.tsx",
+        "src/components/ai-dispatch/ViewSwitcher.tsx",
+        "src/components/ai-dispatch/customer/AlternativeTimeSlots.tsx",
+        "src/components/ai-dispatch/customer/CallScriptDisplay.tsx",
+        "src/components/ai-dispatch/customer/CallStatusButtons.tsx",
+        "src/components/ai-dispatch/customer/CustomerConfirmationModal.tsx",
+        "src/components/ai-dispatch/customer/CustomerNotes.tsx",
+        "src/components/ai-dispatch/emergency/AffectedJobsList.tsx",
+        "src/components/ai-dispatch/emergency/EmergencyJobForm.tsx",
+        "src/components/ai-dispatch/emergency/EmergencyJobModal.tsx",
+        "src/components/ai-dispatch/emergency/ImpactAnalysis.tsx",
+        "src/components/ai-dispatch/live/GapFillerCard.tsx",
+        "src/components/ai-dispatch/live/LiveDayView.tsx",
+        "src/components/ai-dispatch/live/LiveMetrics.tsx",
+        "src/components/ai-dispatch/live/TechStatusCard.tsx",
+        "src/components/ai-dispatch/map/MapLegend.tsx",
+        "src/components/ai-dispatch/map/MapMarker.tsx",
+        "src/components/ai-dispatch/map/MapView.tsx",
+        "src/components/ai-dispatch/map/RouteLine.tsx",
+        "src/components/ai-dispatch/map/TravelTimeIndicator.tsx",
+        "src/components/ai-dispatch/timeline/JobBlock.tsx",
+        "src/components/ai-dispatch/timeline/TechnicianRow.tsx",
+        "src/components/ai-dispatch/timeline/TimelineHeader.tsx",
+        "src/components/ai-dispatch/timeline/TimelineLegend.tsx",
+        "src/components/ai-dispatch/timeline/TimelineView.tsx"
+      ]
+    },
+    {
+      "domain": "calendar",
+      "count": 6,
+      "files": [
+        "src/components/calendar/AINotificationBar.tsx",
+        "src/components/calendar/CalendarMapView.tsx",
+        "src/components/calendar/JobDetailCard.tsx",
+        "src/components/calendar/QuickActions.tsx",
+        "src/components/calendar/RejectReasonDialog.tsx",
+        "src/components/calendar/RejectionHistoryModal.tsx"
+      ]
+    },
+    {
+      "domain": "capacity",
+      "count": 3,
+      "files": [
+        "src/components/capacity/CapacityMetric.tsx",
+        "src/components/capacity/TechnicianWorkload.tsx",
+        "src/components/capacity/WorkloadBar.tsx"
+      ]
+    },
+    {
+      "domain": "csv-upload",
+      "count": 2,
+      "files": [
+        "src/components/csv-upload/CSVDataPreview.tsx",
+        "src/components/csv-upload/CSVUploadCard.tsx"
+      ]
+    },
+    {
+      "domain": "jobs",
+      "count": 9,
+      "files": [
+        "src/components/jobs/JobCard.tsx",
+        "src/components/jobs/JobCustomerInfo.tsx",
+        "src/components/jobs/JobHeader.tsx",
+        "src/components/jobs/JobLocation.tsx",
+        "src/components/jobs/JobStatusBadge.tsx",
+        "src/components/jobs/JobTimeWindow.tsx",
+        "src/components/jobs/JobTypeBadge.tsx",
+        "src/components/jobs/JobsFilter.tsx",
+        "src/components/jobs/JobsList.tsx"
+      ]
+    },
+    {
+      "domain": "technicians",
+      "count": 5,
+      "files": [
+        "src/components/technicians/TechnicianAvailability.tsx",
+        "src/components/technicians/TechnicianCard.tsx",
+        "src/components/technicians/TechnicianSkills.tsx",
+        "src/components/technicians/TechnicianStatusBadge.tsx",
+        "src/components/technicians/TechniciansList.tsx"
+      ]
+    },
+    {
+      "domain": "ui",
+      "count": 14,
+      "files": [
+        "src/components/ui/badge.tsx",
+        "src/components/ui/button.tsx",
+        "src/components/ui/calendar.tsx",
+        "src/components/ui/card.tsx",
+        "src/components/ui/checkbox.tsx",
+        "src/components/ui/date-range-picker.tsx",
+        "src/components/ui/dialog.tsx",
+        "src/components/ui/dropdown-menu.tsx",
+        "src/components/ui/input.tsx",
+        "src/components/ui/label.tsx",
+        "src/components/ui/popover.tsx",
+        "src/components/ui/select.tsx",
+        "src/components/ui/textarea.tsx",
+        "src/components/ui/tooltip.tsx"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "Organization"
+    },
+    {
+      "name": "User"
+    },
+    {
+      "name": "Session"
+    },
+    {
+      "name": "FsmConnection"
+    },
+    {
+      "name": "JobRequest"
+    },
+    {
+      "name": "JobResult"
+    },
+    {
+      "name": "JobMetrics"
+    },
+    {
+      "name": "AuditLog"
+    },
+    {
+      "name": "DispatchSuggestion"
+    },
+    {
+      "name": "UnassignedJob"
+    },
+    {
+      "name": "DispatchQueueJob"
+    },
+    {
+      "name": "ScoreAnalysisCache"
+    }
+  ]
+}

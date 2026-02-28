@@ -1,0 +1,57 @@
+---
+title: AI Chat
+description: Conversational AI assistant for schedule analysis and dispatch planning
+---
+
+{/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
+
+# AI Chat
+
+The AI Chat page gives you a conversational interface to your dispatch plan. Ask plain-English questions about your schedule, get constraint explanations, and request optimization changes — without leaving the dashboard.
+
+Navigate to **Dashboard → AI Chat** to open the chat window.
+
+## What You Can Ask
+
+The AI assistant has direct access to your live schedule and optimization engine. Some things you can do:
+
+- **Understand the plan:** "Why was John not assigned any jobs today?"
+- **Check conflicts:** "Which jobs have overlapping time windows?"
+- **Analyze workload:** "Who has the most driving today?"
+- **Request changes:** "Move the 2 PM appointment to someone closer to downtown."
+- **Explain scores:** "Why does this assignment have a low confidence score?"
+
+## Tool Indicators
+
+While the AI is working, you'll see small status messages below the latest response showing what it's doing in real time:
+
+| Indicator | What It Means |
+|-----------|--------------|
+| 🔧 Checking schedule... | Reading the current master schedule |
+| 🔧 Preparing changes... | Building a plan modification |
+| 🔧 Confirming update... | Writing the accepted change back to the plan |
+| 🔧 Analyzing constraints... | Examining optimization scores and violations |
+| 🔧 Checking feasibility... | Testing whether a requested change is possible |
+| 🔧 Processing... | General computation in progress |
+
+These indicators disappear once the AI has finished the step and is ready to respond.
+
+## How It Works
+
+The AI assistant uses the same optimization engine that powers the AI Dispatch page. When you ask it to make a change, it:
+
+1. Reads the current schedule and constraints
+2. Evaluates whether the change is feasible
+3. Shows you a preview of the impact
+4. Applies the change only after you confirm
+
+<Note>
+The AI Chat assistant does **not** automatically write changes to your FSM. Changes made through chat update the AI Dispatcher plan; you still review and accept them on the AI Dispatch page before they sync back.
+</Note>
+
+## Tips for Best Results
+
+- Be specific: "Move job #1234 to Sarah" works better than "reassign that job"
+- Ask one thing at a time for complex changes
+- If the AI says a change isn't feasible, ask it why — it can explain the exact constraint blocking it
+- Use the **AI Dispatch** page for bulk approvals; use **AI Chat** for investigation and one-off adjustments

@@ -1,31 +1,95 @@
 ---
 title: AI Dispatch
-description: AI-powered job assignment optimization
+description: AI-powered job assignment optimization and one-click dispatch
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
 # AI Dispatch
 
-The AI Dispatch page is where the optimization engine assigns jobs to technicians. Review AI suggestions and approve assignments with one click.
+The AI Dispatch page is where you review, approve, and manage AI-generated job assignments. The optimizer analyzes every pending job and technician simultaneously to produce the most efficient daily schedule.
+
+Navigate to **Dashboard → AI Dispatch** to open the dispatch board.
 
 ## How It Works
 
-1. **Pending jobs** are collected from your FSM platform or job queue
-2. **AI analyzes** technician skills, location, availability, workload, and travel time
-3. **Suggestions appear** with recommended technician, arrival time, and confidence score
-4. **You approve or reject** each suggestion — accepted assignments sync back to your FSM
+<Steps>
+  <Step title="Jobs enter the queue">
+    Pending jobs are pulled from your FSM platform (or submitted manually). Each job is checked for dispatch readiness — valid address, required skills, time window.
+  </Step>
+  <Step title="AI runs optimization">
+    The optimizer considers technician skills, current location, availability, travel time, workload balance, and customer preferences to produce ranked assignment suggestions.
+  </Step>
+  <Step title="Review suggestions">
+    Each suggestion appears with the recommended technician, confidence score, estimated arrival, and AI reasoning. You can accept, reject, or reassign.
+  </Step>
+  <Step title="Accepted assignments sync">
+    Accepted suggestions are written back to your connected FSM automatically — no manual entry needed.
+  </Step>
+</Steps>
 
 ## Optimization Modes
 
-- **Sequential Planning** — Optimizes all pending jobs in a single batch
-- **Continuous Planning** — Re-optimizes as new jobs arrive throughout the day
+| Mode | When to Use |
+|------|-------------|
+| **Sequential Planning** | Optimize all pending jobs in one batch — best for morning planning runs |
+| **Continuous Planning** | Re-optimize as new jobs arrive throughout the day — best for high-volume operations |
+
+Switch between modes using the controls at the top of the AI Dispatch page.
 
 ## Reviewing Suggestions
 
-Each AI suggestion shows:
-- Recommended technician with match score
-- Estimated arrival and departure times
-- Alternative technician options
-- Conflict warnings if any
-- Reasoning for the recommendation
+Each AI suggestion card shows:
+- **Recommended technician** — name, skill match, current utilization
+- **Confidence score** — how strongly the optimizer prefers this assignment
+- **Arrival & departure times** — estimated based on current location and travel
+- **Alternative technicians** — other viable options with their scores
+- **Conflict warnings** — any overlapping jobs or time window violations
+- **AI reasoning** — plain-language explanation of why this technician was chosen
+
+## Views
+
+Switch between different layouts using the **View Switcher** in the top toolbar:
+
+| View | Description |
+|------|-------------|
+| **Schedule Table** | Grid view showing all technicians and their day's assignments |
+| **Timeline** | Horizontal timeline with job blocks per technician, color-coded by status |
+| **Map** | Geographic view showing technician locations, job sites, and route lines |
+| **Live Day** | Real-time view showing current technician status and schedule gaps |
+| **Dual Panel** | Side-by-side: unassigned jobs on the left, technician schedules on the right |
+
+## Batch Actions
+
+Select multiple suggestions using the checkboxes and use the **Batch Action Bar** to:
+- Accept all selected assignments at once
+- Reject a group of suggestions
+- Reassign a batch to a specific technician
+
+## Conflict Resolution
+
+When the optimizer detects a conflict (overlapping jobs, unavailable technician, time window violation), a **Conflict** badge appears on the affected card. Click it to open the **Conflict Resolver**, which shows the exact issue and suggests corrective actions.
+
+## Emergency Jobs
+
+Use the **Emergency Job** button (🚨) to insert an urgent job into the current schedule. The optimizer will re-plan around it and show you which existing assignments need to shift, with an impact summary before you confirm.
+
+## Live Day View
+
+The Live Day View shows real-time technician status:
+- Which technicians are currently on a job
+- Schedule gaps that could be filled
+- Travel-time estimates for the rest of the day
+
+Use the **Gap Filler** cards to quickly assign unscheduled jobs into open time slots.
+
+## Unavailable Periods
+
+Mark technicians as unavailable for specific time blocks (lunch, training, PTO) using the **Unavailable Periods Manager**. These blocks are respected during optimization — jobs are never assigned during marked unavailable periods.
+
+## AI Reasoning Panel
+
+Click the **Reasoning** button on any suggestion to open a detailed explanation of the optimizer's decision, including:
+- Which constraints were evaluated
+- Why alternative technicians ranked lower
+- Specific penalty scores for travel time, skill match, and workload

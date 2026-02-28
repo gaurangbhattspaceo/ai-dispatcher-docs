@@ -1,28 +1,69 @@
 ---
 title: ServiceTrade
-description: Connect AI Dispatcher with ServiceTrade
+description: Connect AI Dispatcher with ServiceTrade for automated technician dispatch
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
 # ServiceTrade Integration
 
-Connect your ServiceTrade account to optimize technician dispatch.
+Connect your ServiceTrade account to let AI Dispatcher optimize technician assignments and write accepted suggestions back to your ServiceTrade schedule automatically.
+
+## How It Works
+
+AI Dispatcher connects to ServiceTrade using your existing account credentials. Once connected, it syncs your open appointments and technician list, runs the optimization engine, and pushes accepted dispatch decisions back to ServiceTrade — so your team always sees up-to-date assignments.
 
 ## Setup
 
-1. Go to **Settings > Connected Apps**
-2. Click **Connect ServiceTrade**
-3. Enter your ServiceTrade credentials
-4. Data sync begins automatically
+<Steps>
+  <Step title="Open Connected Apps">
+    Go to **Settings → Connected Apps** and click **Connect ServiceTrade**.
+  </Step>
+  <Step title="Enter your credentials">
+    Enter your ServiceTrade **username** and **password**. AI Dispatcher uses ServiceTrade's session-based authentication — no OAuth flow required.
+  </Step>
+  <Step title="Authorize and sync">
+    Click **Connect**. AI Dispatcher authenticates with ServiceTrade, fetches your account details, and begins an initial data sync automatically.
+  </Step>
+</Steps>
+
+<Note>
+AI Dispatcher uses **session-based authentication** (username + password) rather than OAuth. Your credentials are encrypted and stored securely — they are only used to refresh the session when needed.
+</Note>
 
 ## Synced Data
 
-- Service appointments
-- Location details
-- Technician information
-- Equipment assignments
+| Data Type | Direction | Notes |
+|-----------|-----------|-------|
+| Service appointments | ServiceTrade → AI Dispatcher | Open and scheduled appointments |
+| Technician list | ServiceTrade → AI Dispatcher | Names, skills, location |
+| Dispatch assignments | AI Dispatcher → ServiceTrade | Write-back on accepted suggestions |
+| Account timezone | ServiceTrade → AI Dispatcher | Used for all scheduling calculations |
+
+## Write-Back: Accepted Assignments
+
+When you accept an AI dispatch suggestion, AI Dispatcher automatically updates the corresponding ServiceTrade appointment with the assigned technician. This means:
+
+- Your dispatchers don't need to manually update ServiceTrade after approving suggestions
+- Technicians see their updated schedule in the ServiceTrade mobile app
+- The **Dispatched** tab in the Jobs queue shows the confirmed assignment alongside ServiceTrade data
+
+<Tip>
+Only **accepted** suggestions trigger a write-back. Rejected suggestions are discarded without touching ServiceTrade.
+</Tip>
+
+## Batch Dispatch
+
+You can select multiple jobs in the queue and dispatch them to the AI optimizer in one click. All accepted assignments from a batch are written back to ServiceTrade together.
 
 ## Disconnecting
 
-Go to **Settings > Connected Apps** and click **Disconnect** next to ServiceTrade.
+Go to **Settings → Connected Apps** and click **Disconnect** next to ServiceTrade. This removes the stored session and stops all syncing. Existing appointments in ServiceTrade are not affected.
+
+## Troubleshooting
+
+**Authentication failed** — Double-check your ServiceTrade username and password. If your password recently changed, reconnect using the new credentials.
+
+**Jobs not appearing** — Click **Sync from ServiceTrade** on the Jobs page to manually trigger a fresh import. Appointments must be in an open/scheduled state to appear.
+
+**Write-back not updating** — Ensure AI Dispatcher has write permissions on your ServiceTrade account. Contact your ServiceTrade administrator if assignments are not syncing.

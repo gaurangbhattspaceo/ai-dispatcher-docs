@@ -1,27 +1,97 @@
 ---
 title: AI Dispatcher Settings
-description: Configure AI optimization behavior
+description: Configure how the AI optimization engine assigns jobs to technicians
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
 # AI Dispatcher Settings
 
-Fine-tune how the AI optimization engine assigns jobs to technicians.
+Fine-tune how the AI optimization engine assigns jobs to your technicians. Settings are saved per organization and apply to every planning run.
 
-## Optimization Preferences
+Navigate to **Settings → AI Dispatcher** to access these options.
 
-Configure at **Settings > AI Dispatcher**:
-- **Planning Mode** — Sequential (batch) or Continuous (real-time)
-- **Priority Weights** — Balance between travel time, skill match, and workload distribution
-- **Time Constraints** — Maximum travel time and scheduling windows
+## Optimization Profile (Presets)
 
-## Auto-Dispatch
+Choose a preset to instantly apply a balanced configuration for your business type. Selecting a preset updates all sliders automatically.
 
-Enable automatic dispatch to let the AI assign jobs without manual approval for high-confidence matches.
+| Preset | Best For |
+|--------|----------|
+| **Balanced** | Most businesses — equal weight on all priorities |
+| **Minimize Travel** | Reducing fuel costs and drive time between jobs |
+| **Fill All Jobs** | Ensuring every job gets assigned, even at the cost of longer routes |
+| **Balance Workload** | Distributing jobs evenly across all technicians |
+| **Custom** | Fine-tune individual weights yourself |
 
-## Constraint Settings
+<Tip>
+Start with **Balanced** and only switch presets if you notice a specific problem — too much driving, uneven technician workloads, or jobs going unassigned.
+</Tip>
 
-- **Skill Matching** — Require exact skill match or allow partial matches
-- **Service Area Enforcement** — Strict zone boundaries or flexible overflow
-- **Capacity Limits** — Maximum jobs per technician per day
+## Optimization Sliders
+
+When you select **Custom** (or manually adjust any slider), you control four independent priorities. Each slider runs from **1 (Low)** to **10 (High)**.
+
+### Job Assignment Priority
+
+How hard the AI tries to assign every pending job. At higher values the optimizer accepts longer routes and imperfect schedules to avoid leaving jobs unassigned.
+
+- **Low (1–3):** Accepts some unassigned jobs in exchange for tighter, more efficient routes
+- **High (7–10):** Pushes hard to assign everything, even if travel time increases
+
+### Time Window Strictness
+
+How precisely the AI honors customer arrival windows. At higher values, showing up within the promised window outweighs other factors like travel efficiency.
+
+- **Low:** Flexible — the AI can deviate from windows to improve overall efficiency
+- **High:** Strict — arrival windows are treated as hard constraints
+
+### Travel Optimization
+
+How strongly the AI minimizes driving distance between jobs.
+
+- **Low:** Travel time is a minor factor; other priorities dominate
+- **High:** Shortest routes are heavily rewarded; technicians stay close to home base
+
+### Workload Balance
+
+How evenly jobs are distributed across your technician team.
+
+- **Low:** The best-fit technician always wins, even if their day is already full
+- **High:** Jobs are spread evenly; no one technician gets overloaded
+
+## Preferred Technician Matching
+
+Controls how strongly the AI favors assigning a job to a customer's previously-assigned technician (when that history is available in your FSM).
+
+| Level | Effect |
+|-------|--------|
+| **Off** | No preference — purely optimized by availability and skill |
+| **Low** | Slight nudge toward the familiar technician |
+| **Medium** | Moderate preference — familiar tech wins ties *(default)* |
+| **High** | Strong preference — familiar tech is chosen unless genuinely unavailable |
+
+<Note>
+Preferred technician data comes from your connected FSM platform. If your FSM does not track previous assignments, this setting has no effect.
+</Note>
+
+## Business Hours
+
+Also on this page: **Company Business Hours** — set the default working hours for each day of the week. These are used when individual technicians do not have their own schedules configured.
+
+<Steps>
+  <Step title="Enable working days">
+    Check the box next to each day your team works.
+  </Step>
+  <Step title="Set start and end times">
+    Enter the start and end time for each active day using the time pickers.
+  </Step>
+  <Step title="Save">
+    Click **Save Business Hours**. Changes take effect on the next planning run.
+  </Step>
+</Steps>
+
+## Saving Settings
+
+- **Save Optimization Settings** — saves your preset/slider/preferred-tech choices
+- **Reset Defaults** — restores the **Balanced** preset with default slider positions
+- Settings are stored per organization and persist across sessions
