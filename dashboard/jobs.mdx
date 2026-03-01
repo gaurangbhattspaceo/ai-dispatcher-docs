@@ -9,6 +9,8 @@ description: Manage, review, and dispatch all service jobs
 
 The Jobs page is your dispatch queue — it shows all jobs imported from your FSM platform, their readiness for dispatch, and the results of AI optimization.
 
+Navigate to **Dashboard → Jobs** to open the dispatch queue.
+
 ## Queue Tabs
 
 Jobs are organized into three tabs:
@@ -19,18 +21,47 @@ Jobs are organized into three tabs:
 | **Dispatched** | Jobs sent to the AI optimizer — shows assigned technician and timing |
 | **Confirmed** | Jobs with accepted AI suggestions that have been written back to your FSM |
 
+Each tab shows a live count of jobs in parentheses next to its label.
+
 ## Syncing Jobs
 
-Click **Sync from [FSM name]** to pull the latest jobs and technicians from your connected platform. The sync also checks each job's dispatch readiness (skills matched, time window valid, location geocoded).
+Click **Sync from [FSM name]** to pull the latest jobs and technicians from your connected platform. The button label automatically shows your connected FSM (e.g., **Sync from ServiceTrade**, **Sync from Jobber**).
+
+After a sync, a confirmation banner appears showing:
+- Total jobs imported
+- How many are **Ready**, **Warnings**, and **Not Ready**
+- Any sync errors
+
+## Technician Readiness Summary
+
+After every sync, a collapsible **Technician Readiness** panel appears below the job list. It shows how many of your technicians passed all dispatch pre-checks. Click the row to expand and see individual technician issues — such as missing skills, no availability set, or address not geocoded.
+
+<Tip>
+Fix technician issues in your FSM or in **Settings → Technicians**, then re-sync to update their readiness status.
+</Tip>
+
+## Readiness Filter
+
+Use the filter bar above the job table to narrow by readiness state:
+
+| Filter | Shows |
+|--------|-------|
+| **All** | Every job in the current tab |
+| **Ready** | Jobs that passed all pre-dispatch checks |
+| **Warnings** | Jobs with non-blocking issues (e.g., missing optional fields) |
+| **Issues** | Jobs that are blocked from dispatch due to missing required data |
 
 ## Batch Dispatch
 
 <Steps>
   <Step title="Select jobs">
-    On the **Queue** tab, check the boxes next to the jobs you want to dispatch. You can select any combination of ready and not-yet-ready jobs.
+    On the **Queue** tab, check the boxes next to the jobs you want to dispatch. Only **Ready** and **Warnings** jobs can be selected — **Issues** jobs are excluded until their data is fixed. Use the header checkbox to select all selectable jobs at once.
   </Step>
   <Step title="Send to optimizer">
-    Click the **Dispatch Selected** button that appears above the list. If no individual jobs are selected, the button changes to **Dispatch All Ready** — which sends all ready jobs in one batch.
+    Click the **Dispatch [N] Jobs** button that appears in the header. If no individual jobs are selected, the button shows **Dispatch All Ready ([N])** — which sends every ready job in one batch.
+  </Step>
+  <Step title="Confirm">
+    A banner confirms how many jobs were dispatched and tells you results will appear in the **Dispatched** tab when the optimizer finishes.
   </Step>
   <Step title="Review suggestions">
     Switch to the **AI Dispatch** page to review the optimization results and accept or reject each assignment.
@@ -38,17 +69,31 @@ Click **Sync from [FSM name]** to pull the latest jobs and technicians from your
 </Steps>
 
 <Tip>
-Jobs flagged as **Ready** have passed all pre-dispatch checks. Jobs marked **Not Ready** are missing required data (e.g., no matching skill or unresolved address). Fix the underlying issue in your FSM and re-sync to make them ready.
+Jobs flagged as **Ready** have passed all pre-dispatch checks. Jobs marked **Issues** are missing required data (e.g., no matching skill or unresolved address). Fix the underlying issue in your FSM and re-sync to make them ready. **Warnings** jobs can still be dispatched but may produce lower-quality suggestions.
 </Tip>
+
+## Expanding Readiness Issues
+
+Any job row with a readiness warning or issue shows a chevron (▶) next to its badge. Click the row to expand an inline issues panel showing:
+
+- **Which field** has the problem (e.g., `requiredSkills`, `latitude`)
+- **What the issue is** (plain-language description)
+- **What to do** — a recommended action to resolve it
+
+Click the row again to collapse the panel.
 
 ## Dispatched Tab
 
 Once jobs are sent to the optimizer, they appear in the **Dispatched** tab. Each row shows:
 
 - Job title and customer details
-- The technician the AI assigned
+- The technician the AI assigned (shown in the **Assigned To** column)
 - Estimated arrival and departure time
 - Dispatch timestamp
+
+<Note>
+The **Assigned To** column shows **Pending...** while the optimizer is still working. Refresh the tab after a few seconds to see the assigned technician.
+</Note>
 
 ## Job Details
 
@@ -56,14 +101,27 @@ Each job row includes:
 - Customer name and service address
 - Required skills and job type
 - Time window (scheduled date/time)
-- Current status badge
-- Sync timestamp
+- Service duration
+- Current readiness badge
+- Priority badge (Emergency or Urgent, when applicable)
+- Time since last sync
+
+## Pagination
+
+The job table shows up to 50 jobs per page. Use the **Previous** and **Next** buttons at the bottom to navigate. A count above the buttons shows how many jobs you're viewing out of the total.
 
 ## Job Status Badges
 
 | Badge | Meaning |
 |-------|---------|
 | **Ready** | All required data is present; job can be dispatched |
-| **Not Ready** | Missing data — address, skills, or time window needs attention |
-| **Dispatched** | Sent to the AI optimizer |
-| **Confirmed** | AI suggestion accepted and written back to FSM |
+| **[N] warnings** | Non-critical issues; job can still be dispatched |
+| **[N] issues** | Missing required data — cannot dispatch until resolved |
+| **Pending** | Readiness check not yet completed |
+
+## Priority Badges
+
+| Badge | Meaning |
+|-------|---------|
+| **Emergency** | Highest priority — urgent response required |
+| **Urgent** | Elevated priority — should be dispatched before standard jobs |
