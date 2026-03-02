@@ -110,6 +110,37 @@ Each AI suggestion card shows:
 - **Conflict warnings** — any overlapping jobs or time window violations
 - **AI reasoning** — plain-language explanation of why this technician was chosen
 
+### Action Buttons on Each Row
+
+Every suggestion row has a small set of action icons:
+
+| Icon | When It Appears | What It Does |
+|------|----------------|--------------|
+| ✅ **Approve** (green checkmark) | Job is ready to confirm | Accepts the assignment and writes it back to your scheduling software |
+| 📞 **Call Customer** (phone) | Job needs your confirmation | Opens the Call Customer dialog so you can confirm the appointment directly with the customer |
+| 🔄 **Reassign** (circular arrows) | Always visible | Opens the Reassignment dialog to pick a different technician |
+| ⚠️ **Resolve Conflicts** (orange triangle) | Job has scheduling conflicts | Opens the Conflict Resolver |
+| ⋮ **More Actions** (three dots) | Always visible | Extra options like "View Full Details" and "Approve Anyway" |
+
+### Calling a Customer to Confirm
+
+Some jobs are marked **Needs Review** — meaning the AI recommends the assignment but wants you to confirm it with the customer before locking it in. These jobs show the **phone icon** (📞) instead of the green checkmark.
+
+Click the phone icon to open the **Call Customer** dialog. Inside you'll find:
+
+- **Call Script** — a ready-to-read script with the customer's name, appointment time, technician name, and job type. Just read it out loud — no preparation needed.
+- **Call Outcome** — three buttons to log what happened:
+
+| Outcome | What to click | What happens |
+|---------|--------------|--------------|
+| Customer confirmed the time | **Confirmed** (green) | Assignment is accepted and syncs to your scheduling software |
+| Customer wants a different time | **Reschedule** (yellow) | Flags the job for manual rescheduling |
+| No answer | **No Answer** (gray) | Closes the dialog — you can try again later |
+
+<Tip>
+You can also call a customer for any assignment (even ones that don't require review) by clicking the **⋮ More Actions** menu and choosing **Call Customer**.
+</Tip>
+
 ## Views
 
 Switch between different layouts using the view tabs that appear after generating a schedule:
@@ -174,5 +205,11 @@ Click the **Reasoning** button on any suggestion to open a detailed explanation 
   </Accordion>
   <Accordion title="What if I get an error generating the schedule?">
     Check that your jobs have valid addresses and time windows, and that your technicians have their skills and availability set up. The error message at the top of the page will tell you what's missing.
+  </Accordion>
+  <Accordion title="What does 'Needs Review' mean on a job?">
+    When the AI is confident about the assignment but wants a human to confirm it first — for example, when the customer's preferred time is tight or the technician is at maximum capacity — it marks the job as **Needs Review**. You'll see a phone icon instead of the green checkmark. Click it to call the customer and confirm, then mark the outcome as Confirmed, Reschedule, or No Answer.
+  </Accordion>
+  <Accordion title="What happens if I close the Call Customer dialog without clicking a button?">
+    Nothing changes. The job stays in Needs Review status and you can come back to it later. No assignment is made until you click Confirmed.
   </Accordion>
 </AccordionGroup>
