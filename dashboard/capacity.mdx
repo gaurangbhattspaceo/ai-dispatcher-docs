@@ -1,21 +1,86 @@
 ---
 title: Capacity Planning
-description: Forecast and manage team capacity
+description: Monitor team workload and identify scheduling gaps or overloads
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
 # Capacity Planning
 
-The capacity planning view helps you understand your team's workload and identify scheduling gaps or overloads.
+The Capacity Planning page gives you a real-time snapshot of how your team's workload is distributed. Spot overloaded technicians, find available bandwidth, and jump straight to the AI Dispatch engine — all from one view.
 
-## Capacity Overview
+Navigate to **Dashboard → Capacity** to open this page.
 
-- **Available hours** vs. **scheduled hours** per technician
-- **Utilization rate** as a percentage
-- **Overbooking alerts** when technicians exceed capacity
-- **Gap identification** showing unbooked time slots
+## Summary Metrics
 
-## Planning Horizon
+At the top of the page, four headline numbers give you a quick health check:
 
-View capacity for the current day, week, or custom date range to plan ahead for seasonal demand or staffing changes.
+| Metric | What It Shows |
+|---|---|
+| **Total jobs** | All jobs currently in your system |
+| **Unplanned jobs** | Jobs not yet assigned to any technician |
+| **Active technicians** | Technicians with an Active status |
+| **Utilization rate** | Percentage of total capacity that is filled (assigned jobs ÷ total capacity) |
+
+Each metric also shows a trend indicator (e.g. +12%) compared to the previous period.
+
+<Note>
+Capacity is calculated as **5 jobs per active technician** by default. If your team uses different capacity targets, contact your administrator to adjust this.
+</Note>
+
+## Filtering Technicians
+
+Use the filter tabs beneath the metrics to focus on the technicians you care about most:
+
+| Tab | Shows |
+|---|---|
+| **All technicians** | Every technician in your system |
+| **Overloaded (>80%)** | Technicians whose utilization is above 80% |
+| **Available (<50%)** | Technicians with significant open capacity |
+| **Inactive** | Technicians with an Inactive status |
+
+## Technician Table
+
+The main table shows one row per technician with these columns:
+
+| Column | Description |
+|---|---|
+| **Technician** | Name with color-coded avatar |
+| **Skills** | Number of skills on record (e.g. "3 skills") |
+| **Assigned jobs** | Jobs currently assigned to this technician |
+| **Capacity** | Maximum jobs this technician can handle |
+| **Utilization** | Visual bar and percentage badge — color-coded green/yellow/red |
+| **Location** | City and state from the technician's address |
+| **Status** | Active or Inactive |
+
+### Utilization Color Guide
+
+| Color | Range | Meaning |
+|---|---|---|
+| 🟢 Green | Under 60% | Technician has plenty of available capacity |
+| 🟡 Yellow | 60–80% | Healthy workload — normal operating range |
+| 🔴 Red | Over 80% | Overloaded — consider reassigning jobs |
+
+## Per-Technician Actions
+
+Click the **⋯ menu** at the end of any row to access quick actions for that technician:
+
+- **View details** — Open the full technician profile
+- **Assign jobs** — Manually assign pending jobs to this technician
+- **View schedule** — See their day-by-day schedule
+- **Adjust capacity** — Change the capacity ceiling for this technician
+
+## Toolbar Actions
+
+The toolbar above the table provides additional filters and bulk actions:
+
+**Filter buttons:** Utilization · Skills · Location · Jobs · More filters
+
+**Action buttons:**
+- **Export** — Download the current view as a report
+- **Analyse** — Run a workload analysis across the team
+- **Optimize** — Launch AI Dispatch to automatically rebalance the schedule
+
+<Tip>
+Click **Optimize** when you see several overloaded technicians alongside others with low utilization. The AI Dispatch engine will rebalance assignments to even out the workload.
+</Tip>
