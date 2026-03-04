@@ -1,24 +1,89 @@
 ---
 title: Calendar
-description: Visual scheduling calendar for all technicians
+sidebarTitle: Calendar
+description: Visual weekly schedule for all technicians with AI suggestions and one-click dispatch
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
-# Calendar
+The Calendar is your day-to-day scheduling view. You can see every technician's week at a glance, review AI-generated job suggestions, and accept or reject assignments — all without leaving this page.
 
-The calendar provides a visual timeline of all technician schedules, job assignments, and availability.
+Navigate to **Dashboard → Calendar** to open it.
 
-## Views
+<Frame caption="The Calendar showing a full week of technician schedules with AI suggestions overlaid">
+  <img src="/images/screenshots/calendar-week.png" alt="Calendar week view with technician schedules" />
+</Frame>
 
-- **Day View** — Detailed hour-by-hour schedule for all technicians
-- **Week View** — Weekly overview with job blocks
-- **Technician View** — Focus on a single technician's schedule
+## What You'll See
 
-## Features
+The calendar displays one column per technician and one row per time slot. Each colored block is a job:
 
-- Drag-and-drop job rescheduling
-- Color-coded job status (pending, confirmed, in-progress, completed)
-- AI suggestion indicators showing recommended time slots
-- Conflict detection highlights overlapping assignments
-- Travel time estimates between jobs
+| Block color | Meaning |
+|---|---|
+| 🔵 Blue | AI suggestion — recommended assignment awaiting your approval |
+| 🟢 Green | Accepted / confirmed assignment |
+| 🟡 Yellow | Pending / in-progress visit from your scheduling software |
+| 🩷 Pink | Completed visit |
+| 🔴 Red | Conflict — two jobs overlap or constraints are violated |
+
+## Navigating the Week
+
+Use the **arrow buttons** (‹ ›) at the top of the calendar to move backward or forward one week at a time. Click the **calendar icon** to jump to a specific date.
+
+The date range at the top shows the current week. The **Refresh** button (↺) pulls the latest jobs and visits from your scheduling software.
+
+## Reviewing AI Suggestions
+
+When the AI Dispatch engine runs, its suggested assignments appear on the calendar as blue blocks.
+
+**To accept a suggestion:**
+Click the blue job block to open the job detail card, then click **Accept**. The job turns green and the assignment is written back to your scheduling software.
+
+**To reject a suggestion:**
+Click the blue job block and click **Reject**. You'll be asked for a brief reason — this helps the AI learn over time. The block disappears from the calendar.
+
+**Bulk accept/reject for one technician:**
+In the right panel (when open), click **Accept All** or **Reject All** next to a technician's name to handle all their suggestions at once.
+
+<Tip>
+You can also bulk-accept every AI suggestion at once using the **Accept All** button at the top of the right panel. Use this when you trust the AI's plan and want to confirm everything quickly.
+</Tip>
+
+## The Right Panel
+
+Click the **panel toggle button** (⊢) at the top right to open or close the side panel. The panel has two tabs:
+
+**AI Suggestions tab** — Shows every pending AI suggestion grouped by technician. Use this to quickly scan and accept or reject each one.
+
+**Awaiting Dispatch tab** — Shows jobs that haven't been assigned yet and are waiting to be sent to the AI optimizer. Check boxes next to jobs you want to dispatch, then click **Dispatch Selected** to send them for optimization.
+
+## Map View
+
+Click the **Map** button to switch to the map view. This shows technician locations and job sites on a map — useful for spotting jobs that are geographically close together and might be reassigned to save driving time.
+
+Click **Map** again (or the list icon) to return to the calendar grid.
+
+## Rejection History
+
+Click the **History** button (clock icon) to see a log of every suggestion you've rejected, along with the reasons. This is helpful for accountability and for spotting patterns (e.g., "we keep rejecting Mike's assignments in the south end of town").
+
+## Syncing with Your Scheduling Software
+
+If you've made changes in your scheduling software and want AI Dispatcher to pick them up without waiting for the next automatic sync, click the **Refresh** button. For specific jobs or visits, use the ↺ resync icon that appears when you hover over a job block.
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="Why is a job showing up as blue even though I accepted it?">
+    Occasionally the calendar needs a moment to refresh after you accept. Click the **Refresh** button at the top right and the block should turn green.
+  </Accordion>
+  <Accordion title="Can I drag and drop jobs to a different technician?">
+    Not in the current version — reassignments go through the **AI Dispatch** page or the job detail card. Drag-and-drop is on the roadmap.
+  </Accordion>
+  <Accordion title="Why does a job show a red conflict indicator?">
+    A conflict means two jobs overlap in time, or a technician doesn't meet the skill requirements. Click the job block to see the conflict details and your options.
+  </Accordion>
+  <Accordion title="The calendar is empty — where are my jobs?">
+    Make sure your scheduling software is connected under **Settings → Connected Apps** and try clicking **Refresh**. If jobs still don't appear, check **Dashboard → Logs** for sync errors.
+  </Accordion>
+</AccordionGroup>

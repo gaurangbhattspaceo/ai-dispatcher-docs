@@ -1,26 +1,63 @@
 ---
 title: Dashboard Overview
-description: Your central command center for dispatch operations
+sidebarTitle: Overview
+description: Your central command center for jobs, technicians, and AI dispatch
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
-# Dashboard Overview
+The Dashboard Overview is your home base. It shows you the key numbers for today at a glance — how many jobs are in the system, how many still need a technician, and how well your team's capacity is being used.
 
-The dashboard gives you a real-time snapshot of your dispatch operations — jobs, technicians, and AI optimization status at a glance.
+<Frame caption="The Dashboard Overview with live job counts, technician utilization, and planning rate">
+  <img src="/images/screenshots/overview-dashboard.png" alt="Dashboard overview page" />
+</Frame>
 
-## Key Metrics
+<Note>
+When you first open the dashboard, you may be redirected to the **Calendar** page — the day-to-day scheduling view your team uses most. Come back to Overview from the sidebar whenever you need the big-picture numbers.
+</Note>
 
-- Total jobs (pending, assigned, completed)
-- Technician utilization
-- AI dispatch suggestions awaiting review
-- System health status
+## The Four Headline Numbers
 
-## Navigation
+At the top of the page you'll see four cards:
 
-Use the sidebar to access all dashboard sections:
-- **Jobs** — Manage and track all service jobs
-- **Technicians** — View technician profiles and availability
-- **Calendar** — Visual schedule for all technicians
-- **AI Dispatch** — AI-powered job assignment optimization
-- **Capacity** — Capacity planning and forecasting
+| Metric | What It Means |
+|---|---|
+| **Total jobs** | Every job currently in the system (pending, assigned, and completed) |
+| **Unplanned jobs** | Jobs that haven't been assigned to a technician yet |
+| **Active technicians** | Technicians who are currently marked as active and available |
+| **Planning rate** | Percentage of jobs that have been assigned — your "coverage" metric |
+
+Each card also shows a trend badge (e.g. **+12%**) compared to the previous period. A rising Planning Rate and a falling Unplanned count means your dispatching is in good shape.
+
+## Date Range Filter
+
+Use the **date selector** in the top-right to change what period the metrics cover. The default is **Last 7 days**. You can also pick **Last 30 days**, **This month**, or a custom range with the date picker.
+
+## Quick Navigation
+
+The dashboard sidebar gives you one-click access to every section:
+
+<Columns cols={2}>
+  <Card title="Jobs" icon="briefcase" href="/dashboard/jobs">
+    Your full dispatch queue — pending, assigned, and completed jobs with filter and batch dispatch
+  </Card>
+  <Card title="Calendar" icon="calendar" href="/dashboard/calendar">
+    Visual week view of technician schedules with AI suggestions overlaid
+  </Card>
+  <Card title="AI Dispatch" icon="sparkles" href="/dashboard/ai-dispatch">
+    Run the optimizer and review AI-generated assignment recommendations
+  </Card>
+  <Card title="AI Chat" icon="message-circle" href="/dashboard/ai-chat">
+    Ask plain-English questions about your schedule and request one-off changes
+  </Card>
+  <Card title="Capacity" icon="bar-chart" href="/dashboard/capacity">
+    See who's overloaded, who has availability, and rebalance workload
+  </Card>
+  <Card title="Technicians" icon="users" href="/dashboard/technicians">
+    Your technician roster with skills, availability, and status
+  </Card>
+</Columns>
+
+<Tip>
+If your **Unplanned jobs** count is high, head to **AI Dispatch** — click **Generate Schedule** and the AI will assign all pending jobs in one go.
+</Tip>

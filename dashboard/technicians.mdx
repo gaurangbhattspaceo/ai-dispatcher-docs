@@ -1,27 +1,90 @@
 ---
 title: Technicians
-description: Manage your field service technicians
+sidebarTitle: Technicians
+description: View and manage your field technician roster synced from your scheduling software
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
-# Technicians
+The Technicians page shows every field tech in your roster — their contact details, skills, location, and status. This is where you check who's active, who's on hold, and who still needs to accept their invitation.
 
-Manage your field technician roster, including their skills, availability, and service areas.
+Navigate to **Dashboard → Technicians** to open it.
 
-## Technician List
+<Frame caption="The Technicians page showing your roster with skills, location, and status for each technician">
+  <img src="/images/screenshots/technicians-list.png" alt="Technicians roster page" />
+</Frame>
 
-View all technicians with their current status, assigned jobs, and utilization rates.
+## What You'll See
 
-## Technician Profiles
+Each row in the table is one technician. Here's what each column means:
 
-Each technician profile includes:
-- **Skills** — Certifications and service capabilities
-- **Service Areas** — Geographic zones they cover
-- **Availability** — Working hours and time off
-- **Equipment** — Tools and vehicles assigned
-- **Performance** — Completion rates and customer ratings
+| Column | What It Shows |
+|---|---|
+| **Name** | Technician's full name with a color-coded avatar |
+| **Email** | Their email address (click to open your mail app) |
+| **Phone** | Mobile number on file |
+| **Skills** | Number of skills or certifications in the system |
+| **Location** | City and state from their home address |
+| **Status** | Whether they're Active, Inactive, or Pending |
+| **Jobs** | Total jobs assigned to this technician |
+| **Created** | When they were added to the system |
 
-## Adding Technicians
+## Status Types
 
-Add technicians manually or sync from your connected FSM platform. Each technician needs at minimum a name, at least one skill, and an availability schedule.
+| Status | What It Means |
+|---|---|
+| 🟢 **Active** | Available for job assignments |
+| ⚫ **Inactive** | Not currently available — won't receive new assignments |
+| 🟡 **Pending** | Invitation sent but not yet accepted |
+
+## Filtering Your Roster
+
+Use the tabs at the top to filter by status:
+
+- **All technicians** — Everyone in the system
+- **Active** — Only technicians currently available for dispatch
+- **Inactive** — Technicians on hold or no longer with the team
+- **Pending** — Technicians who haven't accepted their invitation yet
+
+## Technician Actions
+
+Click the **⋯ button** at the end of any row to access actions for that technician:
+
+- **View profile** — Open their full profile with all details
+- **Edit technician** — Update their name, contact info, or skills
+- **View jobs** — See all jobs assigned to them
+- **Deactivate** — Mark them as inactive (they'll stop receiving new assignments)
+
+## Column Filters
+
+Use the filter chips above the table to narrow by **Skills**, **Location**, **Status**, or **Jobs**. Click **More filters** for additional options, and **Edit columns** to show or hide columns.
+
+## Where Technician Data Comes From
+
+Technicians are synced from your connected scheduling software (Jobber, FieldCamp, HousecallPro, or ServiceTrade). You can't add technicians manually here — they need to be created in your FSM first, then they'll appear here after the next sync.
+
+<Note>
+If a technician is missing from this list, make sure they exist in your scheduling software and that your integration is connected under **Settings → Connected Apps**. Then wait for the next sync or click the refresh button.
+</Note>
+
+## How Skills Affect Dispatch
+
+The AI Dispatcher uses the skills listed here when deciding which technician gets which job. If a job requires plumbing certification and a technician doesn't have it listed, the AI won't assign them to that job — even if they're nearby and available.
+
+<Tip>
+Keep skills up to date in your scheduling software. Outdated or missing skills are one of the most common reasons the AI skips a technician for a job they could actually do.
+</Tip>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="Can I edit a technician's skills from this page?">
+    The **Edit technician** action lets you update details. However, skill changes also need to be made in your scheduling software so they stay in sync. Always update both places to avoid discrepancies.
+  </Accordion>
+  <Accordion title="A technician shows as Pending — what should I do?">
+    They were invited but haven't accepted yet. You can resend the invitation from their profile, or check with them directly. Pending technicians don't appear in dispatch suggestions until they activate their account.
+  </Accordion>
+  <Accordion title="Why doesn't this technician show up in AI Dispatch?">
+    Check that they're marked as **Active** and have at least one skill listed. Inactive technicians and those with no skills are excluded from optimization.
+  </Accordion>
+</AccordionGroup>
