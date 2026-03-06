@@ -1,28 +1,94 @@
 ---
 title: Jobber
-description: Connect AI Dispatcher with Jobber
+sidebarTitle: Jobber
+description: Connect your Jobber account to sync jobs and push accepted dispatch assignments back automatically
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
-# Jobber Integration
+This page shows you how to connect your Jobber account to AI Dispatcher. Jobber uses a secure **OAuth sign-in** — you authorize access directly through Jobber, so you never need to copy API keys.
 
-Connect your Jobber account to sync jobs and dispatch assignments through OAuth.
+<Frame caption="The Connected Apps page where you manage your Jobber connection">
+  <img src="/images/screenshots/settings-connected-apps.png" alt="Connected Apps settings page" />
+</Frame>
 
-## Setup
+## Before You Start
 
-1. Go to **Settings > Connected Apps**
-2. Click **Connect Jobber**
-3. You'll be redirected to Jobber to authorize access
-4. Grant the required permissions and return to AI Dispatcher
+You need a Jobber account with admin access. No API keys or tokens needed — Jobber uses an OAuth authorization flow (similar to "Sign in with Google").
 
-## Synced Data
+## How to Connect Jobber
 
-- Jobs and work orders
-- Client information
-- Team member profiles
-- Scheduling data
+<Steps>
+  <Step title="Open Connected Apps">
+    In AI Dispatcher, go to **Settings → Connected Apps** in the left sidebar.
+  </Step>
+  <Step title="Click Connect Jobber">
+    Find the Jobber tile and click **Connect Jobber**.
+  </Step>
+  <Step title="Sign in to Jobber">
+    You'll be redirected to Jobber's website. Sign in with your Jobber credentials if you aren't already logged in.
+  </Step>
+  <Step title="Grant access">
+    Jobber will show you a permissions screen asking what AI Dispatcher can access. Click **Allow** to authorize the connection.
+  </Step>
+  <Step title="You're connected">
+    You'll be sent back to AI Dispatcher automatically. Jobber syncs your jobs, client info, and team members immediately.
+  </Step>
+</Steps>
 
-## Disconnecting
+<Tip>
+After connecting, you'll see a banner prompting you to set your **Business Hours** in Settings. Do this before running your first dispatch — the AI uses your hours to schedule jobs within your working day.
+</Tip>
 
-To disconnect Jobber, go to **Settings > Connected Apps** and click **Disconnect** next to Jobber.
+## What Syncs Automatically
+
+| What | Direction | When |
+|------|-----------|------|
+| Jobs and work orders | Jobber → AI Dispatcher | Instantly via webhook |
+| Client information | Jobber → AI Dispatcher | On sync |
+| Team members | Jobber → AI Dispatcher | On connect + on demand |
+| Accepted dispatch assignments | AI Dispatcher → Jobber | When you approve a suggestion |
+
+### Real-Time Job Sync (Webhooks)
+
+When a new job is created or updated in Jobber, AI Dispatcher receives a webhook notification immediately. Your Jobs queue stays current without any manual refreshing.
+
+### Write-Back on Dispatch
+
+When you accept an AI dispatch suggestion, AI Dispatcher pushes the technician assignment back to Jobber. Your Jobber schedule reflects the new assignment automatically.
+
+<Note>
+Only **accepted** suggestions are written back to Jobber. Rejected suggestions are discarded without touching your Jobber data.
+</Note>
+
+## Syncing Manually
+
+If you need a fresh import of your jobs right now:
+
+1. Go to the **Jobs** page
+2. Click **Sync from Jobber** in the top right
+
+## Disconnecting Jobber
+
+Go to **Settings → Connected Apps**, find Jobber, and click **Disconnect**. This revokes AI Dispatcher's access token and stops all syncing. Your Jobber data is not affected.
+
+<Note>
+If you ever change your Jobber password or revoke access from within Jobber, you'll need to reconnect by going through the **Connect Jobber** flow again.
+</Note>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="Why am I being redirected to Jobber's website?">
+    That's the OAuth authorization flow — it's the secure, standard way to connect apps without sharing passwords. You're authorizing Jobber to share your data with AI Dispatcher. Jobber controls what access is granted.
+  </Accordion>
+  <Accordion title="What permissions does AI Dispatcher request from Jobber?">
+    AI Dispatcher requests read access to jobs, clients, and team members, plus write access to push dispatch assignments back. You'll see the exact permissions on the Jobber authorization screen before you click Allow.
+  </Accordion>
+  <Accordion title="Jobs from Jobber aren't showing up">
+    Go to the Jobs page and click **Sync from Jobber**. If jobs still don't appear, try disconnecting and reconnecting to refresh the authorization. Make sure the jobs are in an open or scheduled state in Jobber.
+  </Accordion>
+  <Accordion title="Can I connect multiple Jobber accounts?">
+    Not currently. AI Dispatcher supports one Jobber connection per organization. If you need to switch accounts, disconnect and reconnect with the new account.
+  </Accordion>
+</AccordionGroup>

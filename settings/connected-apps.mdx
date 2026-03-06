@@ -1,34 +1,88 @@
 ---
 title: Connected Apps
-description: Manage your FSM platform integrations
+sidebarTitle: Connected Apps
+description: Connect and manage your field service management platform integrations
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
-# Connected Apps
+This is where you connect AI Dispatcher to the scheduling software your team already uses — like FieldCamp, Jobber, HouseCall Pro, or ServiceTrade.
 
-Connect and manage integrations with your field service management platforms.
+<Frame caption="Connected Apps — where you connect your scheduling software to AI Dispatcher">
+  <img src="/images/screenshots/settings-connected-apps.png" alt="Connected Apps settings page" />
+</Frame>
 
 ## Available Integrations
 
-| Platform | Auth Method | Status |
-|----------|-------------|--------|
-| FieldCamp | API Token | Active |
-| Jobber | OAuth 2.0 | Active |
-| HouseCallPro | OAuth 2.0 | Active |
-| ServiceTrade | Credentials | Active |
+AI Dispatcher works with four field service platforms:
 
-## Managing Connections
+<Columns cols={2}>
+  <Card title="FieldCamp" icon="plug">
+    Connects via API token. Jobs sync in real time via webhooks. Accepted assignments write back automatically.
+    [Setup guide →](/integrations/fieldcamp)
+  </Card>
+  <Card title="Jobber" icon="plug">
+    Connects via OAuth (no passwords shared). Authorize access directly in Jobber. Real-time job sync included.
+    [Setup guide →](/integrations/jobber)
+  </Card>
+  <Card title="HouseCall Pro" icon="plug">
+    Connects via OAuth through a quick authorization popup. Jobs and technician data sync automatically.
+    [Setup guide →](/integrations/housecallpro)
+  </Card>
+  <Card title="ServiceTrade" icon="plug">
+    Connects using your ServiceTrade username and password. Credentials are encrypted and stored securely.
+    [Setup guide →](/integrations/servicetrade)
+  </Card>
+</Columns>
 
-Go to **Settings > Connected Apps** to:
-- Connect a new FSM platform
-- View sync status and last sync time
-- Trigger a manual data sync
-- Disconnect a platform
+## How to Connect a Platform
+
+Each integration has its own setup guide — click the links above for step-by-step instructions. The general flow is:
+
+<Steps>
+  <Step title="Go to Settings → Connected Apps">
+    Find the platform you use and click **Connect [Platform Name]**.
+  </Step>
+  <Step title="Authorize access">
+    Depending on the platform: enter your API token, complete the OAuth flow, or enter your credentials. AI Dispatcher guides you through each step.
+  </Step>
+  <Step title="Data syncs automatically">
+    Once connected, your jobs and technicians appear in AI Dispatcher immediately. From this point on, new jobs sync in real time.
+  </Step>
+</Steps>
 
 ## Sync Behavior
 
-When connected, data syncs automatically:
-- **Jobs** sync in real-time via webhooks (when available) or periodically
-- **Technicians** sync during initial connection and on-demand
-- **Assignments** push back to your FSM when dispatched
+| Data | Direction | Timing |
+|------|-----------|--------|
+| Jobs (new and updated) | Your platform → AI Dispatcher | Real-time via webhook |
+| Technician list | Your platform → AI Dispatcher | On connect + manual sync |
+| Accepted dispatch assignments | AI Dispatcher → Your platform | When you click Accept |
+
+<Note>
+Only **one integration** can be active per organization at a time. To switch platforms, disconnect the current one first.
+</Note>
+
+## Disconnecting a Platform
+
+To remove a connection:
+
+1. Go to **Settings → Connected Apps**
+2. Find the active integration
+3. Click **Disconnect**
+
+Disconnecting stops all syncing and removes your credentials from AI Dispatcher. It does not change anything in your scheduling platform.
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="My jobs aren't syncing after connecting">
+    Go to the **Jobs** page and click **Sync from [Platform]** to trigger a manual import. If the problem continues, try disconnecting and reconnecting to refresh the credentials.
+  </Accordion>
+  <Accordion title="Can I connect to more than one platform?">
+    Not at the same time. AI Dispatcher supports one active integration per organization. Disconnect your current platform before connecting a new one.
+  </Accordion>
+  <Accordion title="Are my credentials stored securely?">
+    Yes. OAuth tokens are stored encrypted. API tokens and credentials (for FieldCamp and ServiceTrade) are also encrypted at rest and never displayed after saving.
+  </Accordion>
+</AccordionGroup>

@@ -1,28 +1,87 @@
 ---
-title: HouseCallPro
-description: Connect AI Dispatcher with HouseCallPro
+title: HouseCall Pro
+sidebarTitle: HouseCall Pro
+description: Connect your HouseCall Pro account via OAuth to sync jobs and push dispatch assignments automatically
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
-# HouseCallPro Integration
+This page shows you how to connect your HouseCall Pro account to AI Dispatcher. Like Jobber, HouseCall Pro uses **OAuth sign-in** — a secure authorization flow where you approve access directly in HouseCall Pro without sharing passwords.
 
-Connect your HouseCallPro account to optimize dispatch assignments via OAuth.
+<Frame caption="The Connected Apps page where you manage your HouseCall Pro connection">
+  <img src="/images/screenshots/settings-connected-apps.png" alt="Connected Apps settings page" />
+</Frame>
 
-## Setup
+## Before You Start
 
-1. Go to **Settings > Connected Apps**
-2. Click **Connect HouseCallPro**
-3. Authorize access in the HouseCallPro popup
-4. Data sync begins automatically
+You need a HouseCall Pro account with admin access. No API tokens needed.
 
-## Synced Data
+## How to Connect HouseCall Pro
 
-- Jobs and estimates
-- Customer profiles
-- Technician availability
-- Scheduling data
+<Steps>
+  <Step title="Open Connected Apps">
+    In AI Dispatcher, go to **Settings → Connected Apps** in the left sidebar.
+  </Step>
+  <Step title="Click Connect HouseCall Pro">
+    Find the HouseCall Pro tile and click **Connect HouseCall Pro**.
+  </Step>
+  <Step title="Authorize in the HouseCall Pro popup">
+    A HouseCall Pro authorization window will open. Sign in if prompted, then click **Allow** to grant AI Dispatcher access.
+  </Step>
+  <Step title="You're connected">
+    The popup closes and you're returned to AI Dispatcher. HouseCall Pro begins syncing your jobs, customers, and technician availability immediately.
+  </Step>
+</Steps>
 
-## Disconnecting
+<Tip>
+After connecting, check the **Jobs** page — your open HouseCall Pro jobs should appear there right away. If you don't see them, click **Sync from HouseCall Pro** to trigger a manual import.
+</Tip>
 
-Go to **Settings > Connected Apps** and click **Disconnect** next to HouseCallPro.
+## What Syncs Automatically
+
+| What | Direction | When |
+|------|-----------|------|
+| Jobs and estimates | HouseCall Pro → AI Dispatcher | Instantly via webhook |
+| Customer profiles | HouseCall Pro → AI Dispatcher | On sync |
+| Technician availability | HouseCall Pro → AI Dispatcher | On connect + on demand |
+| Accepted dispatch assignments | AI Dispatcher → HouseCall Pro | When you approve a suggestion |
+
+### Real-Time Job Sync (Webhooks)
+
+HouseCall Pro notifies AI Dispatcher whenever a job is created or changed. Your Jobs queue updates automatically in real time — no manual refreshes needed.
+
+### Write-Back on Dispatch
+
+Accepting an AI dispatch suggestion automatically updates the job in HouseCall Pro with the assigned technician. Your HouseCall Pro schedule stays current without any extra steps.
+
+<Note>
+Only **accepted** suggestions write back to HouseCall Pro. Rejecting a suggestion has no effect on your HouseCall Pro data.
+</Note>
+
+## Syncing Manually
+
+To pull in the latest jobs on demand:
+
+1. Go to the **Jobs** page
+2. Click **Sync from HouseCall Pro** in the top right
+
+## Disconnecting HouseCall Pro
+
+Go to **Settings → Connected Apps**, find HouseCall Pro, and click **Disconnect**. This revokes the access token and stops syncing. Your HouseCall Pro account is not affected.
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="The authorization popup was blocked by my browser">
+    Allow popups for AI Dispatcher in your browser settings, then try connecting again. Most browsers show a notification in the address bar when a popup is blocked — click it and select "Always allow."
+  </Accordion>
+  <Accordion title="My jobs aren't appearing after connecting">
+    Go to the Jobs page and click **Sync from HouseCall Pro** to force a manual import. Jobs must be in an open or scheduled state in HouseCall Pro to appear in AI Dispatcher.
+  </Accordion>
+  <Accordion title="Will disconnecting delete my jobs from AI Dispatcher?">
+    No. Disconnecting only stops future syncing. Any jobs already imported into AI Dispatcher remain in the system.
+  </Accordion>
+  <Accordion title="Can I connect HouseCall Pro alongside another integration?">
+    Each organization can have one active integration at a time. To switch from another platform to HouseCall Pro, disconnect the current integration first, then connect HouseCall Pro.
+  </Accordion>
+</AccordionGroup>

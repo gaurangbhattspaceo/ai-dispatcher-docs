@@ -1,21 +1,41 @@
 ---
 title: General Settings
-description: Configure your workspace preferences
+sidebarTitle: General Settings
+description: Overview of the Settings area in AI Dispatcher
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
-# General Settings
+The **Settings** area is where you configure how AI Dispatcher works for your team. You can reach it by clicking **Settings** in the left sidebar from any page.
 
-Configure workspace-level preferences including timezone, units, and display options.
+<Frame caption="The Settings page — your central hub for configuring AI Dispatcher">
+  <img src="/images/screenshots/settings-full.png" alt="AI Dispatcher Settings page" />
+</Frame>
 
-## Timezone
+## What's in Settings
 
-Set your workspace timezone to ensure accurate scheduling and time displays. All job times and technician availability are shown in this timezone.
+Settings is organized into two main sections:
 
-## Workspace Management
+<Columns cols={2}>
+  <Card title="Company Business Hours" icon="clock">
+    Set the default working days and hours for your team. The AI won't schedule jobs outside these hours.
+    [Go to Company Settings →](/settings/company)
+  </Card>
+  <Card title="AI Optimization Settings" icon="sliders">
+    Choose an optimization preset or fine-tune the four sliders that control how the AI balances job assignment, time windows, travel, and workload.
+    [Go to AI Settings →](/settings/ai-dispatcher)
+  </Card>
+</Columns>
 
-Manage workspace settings at **Settings > General**:
-- Workspace name and description
-- Default views and display preferences
-- Notification preferences
+## Quick Links
+
+| Setting | What it does |
+|---------|-------------|
+| **Business Hours** | Sets when the AI can schedule jobs for your team |
+| **Optimization Preset** | One-click configuration: Balanced, Minimize Travel, Fill All Jobs, or Balance Workload |
+| **Optimization Sliders** | Fine-grained control over the four AI priorities |
+| **Preferred Technician** | How strongly the AI favors sending the same tech to repeat customers |
+
+## Connected Apps
+
+To connect or manage your scheduling platform integration (FieldCamp, Jobber, HouseCall Pro, ServiceTrade), go to [**Settings → Connected Apps**](/settings/connected-apps).

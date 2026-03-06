@@ -1,26 +1,63 @@
 ---
 title: Company Settings
-description: Configure your company information and business hours
+sidebarTitle: Company Settings
+description: Set your company's default working hours so the AI schedules jobs within your business day
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
-# Company Settings
+This is where you tell AI Dispatcher when your company works. The AI uses these hours as the default scheduling window for all jobs — it won't schedule a technician outside these hours unless they have their own individual schedule set up.
 
-Set up your company profile and business operating hours.
+<Frame caption="Company Business Hours — set the days and times your team is available">
+  <img src="/images/screenshots/settings-hours.png" alt="Company Business Hours settings" />
+</Frame>
 
-## Company Information
+## Setting Your Business Hours
 
-Configure at **Settings > Company**:
-- Company name and legal name
-- Business address
-- Phone and email contact
-- Website
+<Steps>
+  <Step title="Go to Settings">
+    In the left sidebar, click **Settings**.
+  </Step>
+  <Step title="Find Company Business Hours">
+    The Business Hours card is at the top of the Settings page.
+  </Step>
+  <Step title="Enable your working days">
+    Check the box next to each day your team works. Unchecked days are treated as non-working days — no jobs will be scheduled on those days by default.
+  </Step>
+  <Step title="Set start and end times">
+    For each checked day, enter your **start time** (when technicians begin work) and **end time** (when their day ends). The default is 9:00 AM – 5:00 PM.
 
-## Business Schedule
+    For example: Monday through Friday, 8:00 AM – 5:00 PM.
+  </Step>
+  <Step title="Click Save Business Hours">
+    Your hours are saved immediately. The next planning run will use these hours to schedule jobs.
+  </Step>
+</Steps>
 
-Define your standard operating hours for each day of the week. These hours are used by the AI optimizer when scheduling jobs.
+<Tip>
+Set your hours **before** running AI dispatch for the first time. If you skip this step, the AI uses a default 9–5 schedule which may not match your actual workday.
+</Tip>
 
-### Holidays
+## How Business Hours Affect Dispatch
 
-Add company holidays to prevent job scheduling on non-working days.
+When the AI plans your day, it uses your business hours to determine when jobs can be scheduled:
+
+- Jobs won't be scheduled to start before your **start time**
+- Jobs won't be scheduled to run past your **end time**
+- Days with unchecked boxes are skipped entirely when scheduling multi-day job queues
+
+**Individual technician schedules take priority.** If a specific technician has their own availability set (on the Technicians page), those hours override the company defaults for that person.
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="What if some technicians work different hours?">
+    Set the company hours to your most common schedule. Then, on the **Technicians** page, you can set individual availability for anyone whose hours differ from the default.
+  </Accordion>
+  <Accordion title="We have emergency or on-call service outside business hours — how do I handle that?">
+    Business hours define the default planning window. For emergency jobs, you can manually assign a technician from the **AI Dispatch** page regardless of their scheduled hours.
+  </Accordion>
+  <Accordion title="Do I need to add holidays separately?">
+    Currently, you can mark specific days as non-working by unchecking them temporarily. If your holiday schedule changes week to week, update the hours before running dispatch for that week.
+  </Accordion>
+</AccordionGroup>

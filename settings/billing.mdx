@@ -1,26 +1,55 @@
 ---
 title: Billing
-description: Manage your subscription and payment details
+sidebarTitle: Billing
+description: Manage your AI Dispatcher subscription, credits, and payment details
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
-# Billing
+This is where you manage your AI Dispatcher plan, view your credit balance, and update payment details.
 
-Manage your AI Dispatcher subscription, payment methods, and usage credits.
+<Frame caption="Billing settings — manage your subscription and usage credits">
+  <img src="/images/screenshots/settings-billing.png" alt="Billing settings page" />
+</Frame>
 
 ## Subscription Plans
 
-View and manage your current plan at **Settings > Billing**. Upgrade or downgrade as your needs change.
+Your current plan determines how many jobs and technicians you can manage, and how many AI dispatch runs you can do each month. Go to **Settings → Billing** to view your current plan and upgrade or downgrade as your needs change.
 
 ## Credits
 
-AI dispatch optimization runs on a credit system. Each optimization request consumes credits based on the number of jobs and complexity.
+AI dispatch optimization runs on a **credit system**. Each time you run the AI optimizer, it uses a small number of credits based on the size of the job queue.
 
-- View your current balance
-- Review usage history
-- Purchase additional credits
+From the Billing page you can:
+- See your **current credit balance**
+- Review your **usage history** (how many credits each run used)
+- **Purchase additional credits** if you're running low
 
-## Payment Portal
+<Tip>
+Credits never expire. If you buy extra credits and don't use them this month, they roll over automatically.
+</Tip>
 
-Access the Stripe customer portal to update payment methods, view invoices, and manage billing details.
+## Updating Payment Details
+
+Click **Manage Billing** (or **Open Payment Portal**) to open the Stripe customer portal. From there you can:
+- Update your credit card
+- View and download past invoices
+- Change your billing email
+
+<Note>
+Payment processing is handled by **Stripe**, a secure payment platform. AI Dispatcher never stores your card details directly.
+</Note>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="How many credits does one AI dispatch run use?">
+    Credit usage depends on the number of jobs and technicians in the run. A typical run with 10–20 jobs uses 1–3 credits. You can see the exact usage for each run in your credit history.
+  </Accordion>
+  <Accordion title="What happens if I run out of credits?">
+    The AI optimizer will be paused until you purchase more credits. Manual dispatch (assigning technicians yourself on the Calendar or Jobs page) still works without credits.
+  </Accordion>
+  <Accordion title="How do I cancel my subscription?">
+    Open the Stripe payment portal from the Billing page and select **Cancel plan**. Your account remains active through the end of the current billing period.
+  </Accordion>
+</AccordionGroup>

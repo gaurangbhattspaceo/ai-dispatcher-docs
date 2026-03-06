@@ -1,27 +1,98 @@
 ---
 title: FieldCamp
-description: Connect AI Dispatcher with FieldCamp
+sidebarTitle: FieldCamp
+description: Connect your FieldCamp account to automatically sync jobs, technicians, and dispatch assignments
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
-# FieldCamp Integration
+This page shows you how to connect your FieldCamp account to AI Dispatcher so jobs flow in automatically and dispatch assignments are written back to FieldCamp after you approve them.
 
-Connect your FieldCamp account to automatically sync jobs, technicians, and dispatch assignments.
+<Frame caption="The Connected Apps page where you manage your FieldCamp connection">
+  <img src="/images/screenshots/settings-connected-apps.png" alt="Connected Apps settings page" />
+</Frame>
 
-## Setup
+## Before You Start
 
-1. Go to **Settings > Connected Apps**
-2. Click **Connect FieldCamp**
-3. Enter your FieldCamp API token
-4. Select which data to sync (jobs, technicians, or both)
+You need your **FieldCamp API token** to connect. You can find it in your FieldCamp account under **Account Settings → API Access**.
 
-## How It Works
+<Note>
+You must be an admin in FieldCamp to generate an API token.
+</Note>
 
-- **Jobs** are pulled from FieldCamp via webhook or periodic sync
-- **Technicians** and their profiles are imported automatically
-- **Dispatch assignments** are pushed back to FieldCamp after approval
+## How to Connect FieldCamp
 
-## Webhook Configuration
+<Steps>
+  <Step title="Open Connected Apps">
+    In AI Dispatcher, go to **Settings → Connected Apps** in the left sidebar.
+  </Step>
+  <Step title="Click Connect FieldCamp">
+    Find the FieldCamp tile and click **Connect FieldCamp**.
+  </Step>
+  <Step title="Paste your API token">
+    Enter the API token from your FieldCamp account. This is the token that lets AI Dispatcher read your jobs and technician list.
+  </Step>
+  <Step title="Choose what to sync">
+    Select whether to sync **Jobs**, **Technicians**, or both. For most teams, sync both.
+  </Step>
+  <Step title="Click Save">
+    AI Dispatcher connects to FieldCamp and runs an initial sync. Your jobs and technicians will appear on their respective pages within a few seconds.
+  </Step>
+</Steps>
 
-For real-time job syncing, configure a webhook in your FieldCamp settings pointing to your AI Dispatcher webhook endpoint. See the [Webhooks API](/api/webhooks) for details.
+<Tip>
+After connecting, head to the **Jobs** page. You should see your open FieldCamp jobs listed there immediately.
+</Tip>
+
+## What Syncs Automatically
+
+| What | Direction | When |
+|------|-----------|------|
+| New jobs | FieldCamp → AI Dispatcher | Instantly via webhook |
+| Job updates | FieldCamp → AI Dispatcher | Instantly via webhook |
+| Technician list | FieldCamp → AI Dispatcher | On connect + on demand |
+| Accepted assignments | AI Dispatcher → FieldCamp | When you approve a suggestion |
+
+### Real-Time Job Sync (Webhooks)
+
+FieldCamp sends AI Dispatcher a notification every time a new job is created or updated. This means your dispatch queue is always current — you don't need to manually refresh.
+
+For webhooks to work, your FieldCamp account needs to point to your AI Dispatcher webhook URL. If you set up AI Dispatcher using the standard install, this is already configured. If jobs aren't appearing automatically, see the troubleshooting section below.
+
+### Write-Back on Dispatch
+
+When you accept an AI dispatch suggestion, AI Dispatcher pushes the technician assignment back to FieldCamp. Your FieldCamp schedule updates automatically — no double-entry needed.
+
+<Note>
+Only **accepted** suggestions are written back. Rejected suggestions do not change anything in FieldCamp.
+</Note>
+
+## Syncing Manually
+
+If you need to pull in the latest jobs or technicians right now:
+
+1. Go to the **Jobs** page
+2. Click **Sync from FieldCamp** in the top right
+
+This forces a full re-import of all open jobs.
+
+## Disconnecting FieldCamp
+
+Go to **Settings → Connected Apps**, find FieldCamp, and click **Disconnect**. This removes your API token and stops all syncing. Existing jobs and assignments in FieldCamp are not changed.
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="Jobs aren't appearing after I connected">
+    Click **Sync from FieldCamp** on the Jobs page to force a manual import. If that doesn't work, double-check your API token is correct and hasn't expired. Re-enter it in Connected Apps if needed.
+  </Accordion>
+  <Accordion title="How do I find my FieldCamp API token?">
+    Log into FieldCamp, go to **Account Settings → API Access**, and copy your token. If you don't see that option, ask your FieldCamp admin — you may need admin access to generate one.
+  </Accordion>
+  <Accordion title="Will connecting affect my live FieldCamp data?">
+    Connecting is read-only until you start accepting dispatch suggestions. The only time AI Dispatcher writes to FieldCamp is when you click **Accept** on a suggestion — and only for that specific job.
+  </Accordion>
+  <Accordion title="What if a job is updated in FieldCamp after I dispatch it?">
+    The webhook will send the update to AI Dispatcher. The job will reflect the new details on the Jobs page. If you haven't dispatched it yet, the next AI suggestion will use the updated info.
+  </Accordion>
+</AccordionGroup>
