@@ -1,89 +1,132 @@
 ---
 title: Calendar
 sidebarTitle: Calendar
-description: Visual weekly schedule for all technicians with AI suggestions and one-click dispatch
+description: Visual scheduling view for all technicians with AI suggestions and one-click dispatch
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
-The Calendar is your day-to-day scheduling view. You can see every technician's week at a glance, review AI-generated job suggestions, and accept or reject assignments — all without leaving this page.
+The Calendar is your day-to-day scheduling hub. See every technician's schedule at a glance, review AI-generated job suggestions, and accept or reject assignments — all without leaving this page.
 
 Navigate to **Dashboard → Calendar** to open it.
 
-<Frame caption="The Calendar showing a full week of technician schedules with AI suggestions overlaid">
+<Frame caption="The Dispatch Calendar showing a full week of technician schedules with AI suggestions overlaid">
   <img src="/images/screenshots/calendar-week.png" alt="Calendar week view with technician schedules" />
 </Frame>
 
-## What You'll See
+## View Modes
 
-The calendar displays one column per technician and one row per time slot. Each colored block is a job:
+The calendar offers four views — switch between them using the **view dropdown** in the top-left header.
 
-| Block color | Meaning |
+| View | Description |
+|------|-------------|
+| **Calendar** | Standard weekly grid — one column per technician, one row per time slot |
+| **Resource** | Per-technician focus view — choose **Day** (single day, all techs) or **Week** (one tech at a time) |
+| **Timeline** | Horizontal Gantt-style view of all technicians across a day. Two sub-modes: **Schedule** (all-day overview) and **Hourly** (hour-by-hour blocks) |
+| **Map** | Geographic view of technician locations and job sites — see who is closest to each job |
+
+<Tip>
+The **Resource** view remembers your last-used sub-mode (Day or Week) between sessions so you don't have to re-select it every time.
+</Tip>
+
+### Navigation
+
+- **Calendar / Resource Week / Timeline / Map Week:** Use the **‹** and **›** arrow buttons to move backward or forward one week. Click **Today** to jump back to the current week.
+- **Resource Day / Map Day:** Arrows navigate one day at a time. Click **Today** to return to today.
+- Click the **calendar icon** to jump to a specific date.
+
+## Grid Controls
+
+Three additional dropdowns appear in the header toolbar to customize how the grid looks:
+
+### Time Slot Granularity ⏱
+
+Controls how many minutes each row represents. Options: **15 min**, **30 min**, **1 hour** (default), **2 hours**, **3 hours**.
+
+- Smaller slots give a more detailed view of job timing — useful for busy days with back-to-back appointments.
+- Larger slots give a high-level overview and reduce scrolling on lighter days.
+
+### Full View / Business Hours
+
+- **Full View** (default) — Shows the entire 24-hour day.
+- **Business Hours** — Clips the grid to only show your configured working hours (set in **Settings → Company Business Hours**). Useful for keeping the calendar focused on your actual working day.
+
+## Job Blocks
+
+Each colored block on the calendar represents a job or visit:
+
+| Block Color | What It Means |
 |---|---|
-| 🔵 Blue | AI suggestion — recommended assignment awaiting your approval |
-| 🟢 Green | Accepted / confirmed assignment |
-| 🟡 Yellow | Pending / in-progress visit from your scheduling software |
+| 🔵 Blue | AI suggestion — awaiting your approval |
+| 🟢 Green | Accepted / confirmed AI assignment |
+| 🟡 Yellow | Scheduled visit from your FSM |
+| 🌿 Teal | In-progress visit |
 | 🩷 Pink | Completed visit |
-| 🔴 Red | Conflict — two jobs overlap or constraints are violated |
+| 🟠 Orange | In-transit to a job |
 
-## Navigating the Week
-
-Use the **arrow buttons** (‹ ›) at the top of the calendar to move backward or forward one week at a time. Click the **calendar icon** to jump to a specific date.
-
-The date range at the top shows the current week. The **Refresh** button (↺) pulls the latest jobs and visits from your scheduling software.
+Travel time blocks appear as a lighter shaded strip before each job block — this is the AI's estimated drive time built into the schedule.
 
 ## Reviewing AI Suggestions
 
-When the AI Dispatch engine runs, its suggested assignments appear on the calendar as blue blocks.
+When the AI Dispatch engine runs, its suggested assignments appear as blue blocks on the calendar.
 
 **To accept a suggestion:**
-Click the blue job block to open the job detail card, then click **Accept**. The job turns green and the assignment is written back to your scheduling software.
+Click the blue job block to open the detail card, then click **Accept**. The block turns green and the assignment is written back to your FSM.
 
 **To reject a suggestion:**
-Click the blue job block and click **Reject**. You'll be asked for a brief reason — this helps the AI learn over time. The block disappears from the calendar.
+Click the block and click **Reject**. You'll be asked for a brief reason — this feedback helps the AI improve over time.
 
 **Bulk accept/reject for one technician:**
-In the right panel (when open), click **Accept All** or **Reject All** next to a technician's name to handle all their suggestions at once.
+In the right panel **AI** tab, click **Accept All** or **Reject All** next to a technician's name.
 
 <Tip>
-You can also bulk-accept every AI suggestion at once using the **Accept All** button at the top of the right panel. Use this when you trust the AI's plan and want to confirm everything quickly.
+Use the **Accept All** button at the top of the AI panel to confirm every suggestion at once when you trust the AI's plan.
 </Tip>
 
 ## The Right Panel
 
-Click the **panel toggle button** (⊢) at the top right to open or close the side panel. The panel has two tabs:
+Click the **panel toggle button** (⊢) to open or close the side panel. The panel has three tabs:
 
-**AI Suggestions tab** — Shows every pending AI suggestion grouped by technician. Use this to quickly scan and accept or reject each one.
+### AI Tab
+Shows every pending AI suggestion grouped by technician. Review and accept or reject each one individually, or use the bulk buttons at the top.
 
-**Awaiting Dispatch tab** — Shows jobs that haven't been assigned yet and are waiting to be sent to the AI optimizer. Check boxes next to jobs you want to dispatch, then click **Dispatch Selected** to send them for optimization.
+### Queue Tab
+Shows jobs that haven't been assigned yet and are waiting to be sent to the optimizer. Check the boxes next to jobs you want to dispatch, then click **Dispatch Selected** to send them for optimization. If no jobs are individually checked, the button dispatches all ready jobs at once.
 
-## Map View
+### Visits Tab
+Shows all scheduled visits for the current week pulled from your FSM, along with a live status summary: **Scheduled**, **In Progress**, **In Transit**, and **Completed** counts appear at the top. Scroll down to see the full list with technician assignments and addresses.
 
-Click the **Map** button to switch to the map view. This shows technician locations and job sites on a map — useful for spotting jobs that are geographically close together and might be reassigned to save driving time.
-
-Click **Map** again (or the list icon) to return to the calendar grid.
+<Note>
+When the right panel is in **Map** view mode, the side panel auto-collapses to give the map more space. Click the toggle button to re-open it if needed.
+</Note>
 
 ## Rejection History
 
-Click the **History** button (clock icon) to see a log of every suggestion you've rejected, along with the reasons. This is helpful for accountability and for spotting patterns (e.g., "we keep rejecting Mike's assignments in the south end of town").
+Click the **History** button (clock icon) in the header to view a log of every suggestion you've rejected, including the reasons given. Useful for identifying patterns — for example, if a particular technician's assignments are regularly rejected in a specific area.
 
-## Syncing with Your Scheduling Software
+## Syncing with Your FSM
 
-If you've made changes in your scheduling software and want AI Dispatcher to pick them up without waiting for the next automatic sync, click the **Refresh** button. For specific jobs or visits, use the ↺ resync icon that appears when you hover over a job block.
+The calendar pulls data automatically. To force a refresh — for example, if you've just made changes in your scheduling software — click the **Refresh** button (↺) in the header.
 
 ## Common Questions
 
 <AccordionGroup>
-  <Accordion title="Why is a job showing up as blue even though I accepted it?">
-    Occasionally the calendar needs a moment to refresh after you accept. Click the **Refresh** button at the top right and the block should turn green.
+  <Accordion title="Why is a job still showing as blue after I accepted it?">
+    The calendar occasionally needs a moment to refresh. Click the **Refresh** button and the block should turn green.
   </Accordion>
-  <Accordion title="Can I drag and drop jobs to a different technician?">
+  <Accordion title="Can I drag and drop jobs to reassign them?">
     Not in the current version — reassignments go through the **AI Dispatch** page or the job detail card. Drag-and-drop is on the roadmap.
   </Accordion>
   <Accordion title="Why does a job show a red conflict indicator?">
-    A conflict means two jobs overlap in time, or a technician doesn't meet the skill requirements. Click the job block to see the conflict details and your options.
+    A conflict means two jobs overlap in time, or a technician doesn't meet the skill requirements for the job. Click the block to see the conflict details and resolution options.
   </Accordion>
   <Accordion title="The calendar is empty — where are my jobs?">
-    Make sure your scheduling software is connected under **Settings → Connected Apps** and try clicking **Refresh**. If jobs still don't appear, check **Dashboard → Logs** for sync errors.
+    Make sure your scheduling software is connected under **Settings → Connected Apps**, then click **Refresh**. If jobs still don't appear, check **Dashboard → Logs** for sync errors.
+  </Accordion>
+  <Accordion title="What's the difference between Timeline Schedule and Timeline Hourly?">
+    **Schedule** shows a compact all-day overview — great for quickly scanning who's doing what without worrying about exact times. **Hourly** shows each hour as a separate row so you can see precise start/end times and gaps between jobs.
+  </Accordion>
+  <Accordion title="Business Hours mode isn't clipping the grid correctly.">
+    Business Hours mode reads from your **Company Business Hours** setting. Go to **Settings** and make sure your working hours are saved correctly, then return to the calendar.
   </Accordion>
 </AccordionGroup>
