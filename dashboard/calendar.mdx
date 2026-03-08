@@ -100,6 +100,23 @@ Shows all scheduled visits for the current week pulled from your FSM, along with
 When the right panel is in **Map** view mode, the side panel auto-collapses to give the map more space. Click the toggle button to re-open it if needed.
 </Note>
 
+## Unassigned Jobs Bell
+
+In the calendar header you'll see a **bell icon** (🔔). When the optimizer has jobs it couldn't assign — because no technician matched the required skill, the time window was too tight, or no one was available in the area — a small orange badge appears on the bell showing the count.
+
+Click the bell to open the **Unassigned Jobs** panel. Each entry shows:
+- **Job number and customer name**
+- **Severity level** — Critical (red), Warning (amber), or Info (blue)
+- **Why it wasn't assigned** — a plain-language reason like "No technician available with required skills"
+- **Possible reasons** — up to two additional contributing factors
+- An **Assign Manually** button to open the reassignment dialog directly from the list
+
+At the bottom of the panel, a **Resync All** button re-submits all unassigned jobs to the optimizer for another planning attempt — useful after you've freed up technician availability or added a new team member.
+
+<Tip>
+If the bell shows a red badge (Critical), check the Unassigned Jobs panel before ending your dispatch session. Critical jobs are typically same-day with no fallback technician.
+</Tip>
+
 ## Rejection History
 
 Click the **History** button (clock icon) in the header to view a log of every suggestion you've rejected, including the reasons given. Useful for identifying patterns — for example, if a particular technician's assignments are regularly rejected in a specific area.
