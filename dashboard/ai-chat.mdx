@@ -42,20 +42,21 @@ These status labels disappear once the AI has finished each step and is ready to
 
 ## If Something Goes Wrong
 
-The AI Chat will show a friendly message if it can't respond. Here's what each one means and what to do:
+When the AI can't respond, it shows an amber info card in the chat with a bold error title, actionable bullet points explaining what to do, and — for temporary errors — a **Try Again** button you can click to resend your message without retyping it.
 
-| Message | What It Means | What to Do |
+| Error Title | What It Means | What to Do |
 |---|---|---|
-| "Temporarily unavailable, try again in a few minutes" | The AI service is under heavy load | Wait a moment and send your message again |
-| "Undergoing maintenance, try again later" | Scheduled maintenance is in progress | Try again in a little while |
-| "Request timed out — try again" | Your question took too long to process | Break it into smaller questions or try again |
-| "Too many requests — wait a moment" | You've sent a lot of messages quickly | Pause for 30 seconds and try again |
-| "Session expired — please log in again" | Your login session ended | Refresh the page and log in |
-| "Not configured for your organization" | AI Chat isn't set up yet for your account | Contact your administrator |
-| "Service is offline" | The AI service is unreachable | Contact your administrator |
+| **Scheduling Service Unavailable** | The AI service is under heavy load or temporarily down | Click **Try Again**, or wait a minute and retry |
+| **Scheduling Service Unavailable** (maintenance) | Scheduled maintenance is in progress | Try again in a little while |
+| **Request Timed Out** | Your question took too long to process | Click **Try Again**, or break it into a shorter question |
+| **Too Many Requests** | You've sent a lot of messages quickly | Wait 30 seconds, then click **Try Again** |
+| **Session Expired** | Your login session ended | Refresh the page and log in again |
+| **AI Assistant Not Configured** | AI Chat isn't enabled for your organization | Contact your administrator |
+| **AI Assistant Offline** | The AI service is unreachable | Contact your system administrator |
+| **Connection Lost** | Network connection was interrupted | Check your connection, then click **Try Again** |
 
 <Note>
-Most errors are temporary. If the same error keeps appearing, contact your account administrator.
+The **Try Again** button only appears on temporary, retryable errors. For non-retryable errors (session expired, not configured, offline), follow the "What to Do" guidance above instead.
 </Note>
 
 ## How It Works
