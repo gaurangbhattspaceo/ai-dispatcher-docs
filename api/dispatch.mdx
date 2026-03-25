@@ -7,29 +7,119 @@ description: AI-powered dispatch suggestions and decisions
 
 # Dispatch API
 
-Access AI optimization suggestions and record dispatch decisions.
+Access AI optimization suggestions, record dispatch decisions, and integrate AI Dispatcher into your own FSM workflows.
 
-## Endpoints
+## Internal Dispatch Endpoints
+
+These endpoints power the AI Dispatch dashboard and are used directly by the AI Dispatcher UI.
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/api/dispatch/suggestions` | Get AI dispatch suggestions |
 | POST | `/api/dispatch/decisions` | Accept or reject suggestions |
+| PATCH | `/api/dispatch/decisions` | Update a decision |
 | POST | `/api/dispatch/cleanup` | Clean up dispatch data |
 | POST | `/api/dispatch/resync` | Resync dispatch state |
+
+## Organization Dispatch Endpoints
+
+These endpoints manage the dispatch queue used by the Jobs page.
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/organization/dispatch-queue` | List jobs in the dispatch queue |
+| POST | `/api/organization/dispatch` | Send selected jobs to the AI optimizer |
+| POST | `/api/organization/sync` | Trigger a sync from the connected FSM |
+| GET | `/api/organization/settings` | Get organization settings (incl. dispatch config) |
+| POST | `/api/organization/settings` | Save organization settings |
+| GET | `/api/organization/info` | Get organization info (FSM type, name, etc.) |
 
 ## AI Planning
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/aidispatch/sequential-planning` | Batch optimization |
-| POST | `/api/aidispatch/continuous-planning` | Continuous optimization |
+| POST | `/api/aidispatch/sequential-planning` | Batch optimization run |
+| POST | `/api/aidispatch/continuous-planning` | Continuous background optimization |
 
-## Calendar Integration
+## FSM Integration API
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/calendar2/technicians` | Calendar technician view |
-| GET | `/api/calendar2/visits` | Calendar visits |
-| GET | `/api/calendar2/suggestions` | Calendar suggestions |
-| GET | `/api/calendar2/pending` | Pending calendar items |
+These endpoints are designed for **external FSM platforms** to pull AI suggestions and record accept/reject decisions programmatically. All requests require a **JWT Bearer token**.
+
+<Note>
+The FSM Integration API uses JWT authentication — not session cookies. Generate your token from **Settings → Connected Apps → API Token**.
+</Note>
+
+### GET `/api/v1/fsm/suggestions`
+
+Returns AI dispatch suggestions and unassigned jobs for your organization.
+
+**Query parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `status` | string | Filter by status: `PENDING`, `ACCEPTED`, `REJECTED`, `EXPIRED` (or comma-separated list) |
+| `technicianId` | string | Filter to a specific technician |
+| `jobId` | string | Filter to a specific job |
+| `startDate` | ISO 8601 | Start of date range |
+| `endDate` | ISO 8601 | End of date range |
+| `includeUnassigned` | boolean | Include unassigned jobs in the response (default: `true`) |
+| `limit` | number | Max results to return (default: 100, max: 1000) |
+| `offset` | number | Pagination offset (default: 0) |
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "suggestions": [...],
+    "unassignedJobs": [...],
+    "counts": {
+      "pending": 12,
+      "total": 45,
+      "unassigned": { "critical": 1, "warning": 3, "info": 2 }
+    },
+    "pagination": {
+      "limit": 100,
+      "offset": 0,
+      "hasMore": false
+    }
+  }
+}
+```
+
+### POST `/api/v1/fsm/decisions`
+
+Accept or reject a single dispatch suggestion from your FSM.
+
+**Request body:**
+```json
+{
+  "suggestionId": "clxyz123",
+  "decision": "ACCEPTED",
+  "note": "Confirmed with customer"
+}
+```
+
+| Field | Required | Values |
+|-------|----------|--------|
+| `suggestionId` | ✅ | The suggestion ID from `/api/v1/fsm/suggestions` |
+| `decision` | ✅ | `ACCEPTED` or `REJECTED` |
+| `note` | ❌ | Optional text note |
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "suggestion": { ... }
+  }
+}
+```
+
+### PATCH `/api/v1/fsm/decisions`
+
+Update an existing decision (e.g., change a previously accepted suggestion to rejected).
+
+<Note>
+Decisions made via the FSM Integration API are recorded in AI Dispatcher but do **not** automatically write back to your FSM — your FSM is the source of truth. If you accept a suggestion here, update the assignment in your FSM separately if needed.
+</Note>

@@ -7,25 +7,88 @@ description: Receive real-time job notifications from FSM platforms
 
 # Webhooks
 
-AI Dispatcher receives real-time job data from FSM platforms via webhooks.
+AI Dispatcher receives real-time job and event data from FSM platforms via webhooks. When a job is created, updated, or assigned in your scheduling software, a webhook fires and AI Dispatcher immediately processes the change.
 
-## Endpoints
+## Webhook Endpoints by Platform
+
+### FieldCamp
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/webhook/fieldcamp/jobs` | Receive FieldCamp job webhook |
-| POST | `/api/webhook/fieldcamp/jobs/preview` | Preview webhook payload |
+| POST | `/api/webhook/fieldcamp/jobs` | Receive FieldCamp job events |
+| POST | `/api/webhook/fieldcamp/jobs/preview` | Preview a FieldCamp webhook payload (dry run) |
+
+### Jobber
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/webhook/jobber/events` | Receive Jobber job events |
+| POST | `/api/webhook/jobber/queue` | Queue incoming Jobber events for processing |
+
+### HouseCall Pro
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/webhook/housecallpro/events` | Receive HouseCall Pro job events |
+| POST | `/api/webhook/housecallpro/queue` | Queue incoming HouseCall Pro events for processing |
+
+### ServiceTrade
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/webhook/servicetrade/events` | Receive ServiceTrade job events |
+| POST | `/api/webhook/servicetrade/queue` | Queue incoming ServiceTrade events for processing |
 
 ## Setting Up Webhooks
 
 ### FieldCamp
 
-1. Go to your FieldCamp admin settings
-2. Navigate to the Webhooks section
-3. Add a new webhook pointing to: `https://your-domain.com/api/webhook/fieldcamp/jobs`
-4. Select the job events you want to receive (created, updated, assigned)
-5. Save and test the connection
+<Steps>
+  <Step title="Open FieldCamp admin settings">
+    Navigate to your FieldCamp admin panel and go to the **Webhooks** section.
+  </Step>
+  <Step title="Add a webhook">
+    Create a new webhook pointing to:
+    `https://your-domain.com/api/webhook/fieldcamp/jobs`
+  </Step>
+  <Step title="Select events">
+    Choose the job events you want to receive: **created**, **updated**, **assigned**.
+  </Step>
+  <Step title="Save and test">
+    Save the webhook and use the FieldCamp test button (or AI Dispatcher's preview endpoint) to confirm the connection.
+  </Step>
+</Steps>
 
-## Payload Format
+### Jobber
 
-Webhook payloads include job details, customer information, and scheduling requirements. See the AI Dispatcher integration guide for the complete payload schema.
+Jobber webhooks are configured automatically when you connect AI Dispatcher via OAuth. Go to **Settings → Connected Apps** and click **Connect Jobber** — webhook registration happens as part of the OAuth flow.
+
+### HouseCall Pro
+
+HouseCall Pro webhooks are registered automatically during the OAuth connection. Go to **Settings → Connected Apps** and click **Connect HouseCall Pro**.
+
+### ServiceTrade
+
+ServiceTrade does not use a standard webhook push mechanism. AI Dispatcher polls ServiceTrade for new and updated appointments at regular intervals after you connect. To trigger an immediate sync, click **Sync from ServiceTrade** on the Jobs page.
+
+## Webhook Verification
+
+All inbound webhook requests are verified using a platform-specific signature or token before they are processed. AI Dispatcher rejects unauthenticated webhook payloads with a `401 Unauthorized` response.
+
+<Note>
+Your webhook URL must be publicly reachable from the internet. If you're running AI Dispatcher on localhost or behind a private network, use a tunneling tool (such as ngrok) during development.
+</Note>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="Jobs aren't appearing after they're created in my FSM">
+    First, check that your integration is connected under **Settings → Connected Apps**. Then go to **Dashboard → Logs** and look for purple webhook lines. If no lines appear after creating a job, the webhook may not be configured correctly in your FSM. Use the **Sync from [Platform]** button on the Jobs page to do a manual pull as a fallback.
+  </Accordion>
+  <Accordion title="Can I test webhooks without a live FSM connection?">
+    Yes — use the `POST /api/webhook/fieldcamp/jobs/preview` endpoint to submit a test payload and see how AI Dispatcher would process it, without actually creating a job. This is useful during initial setup and integration testing.
+  </Accordion>
+  <Accordion title="What events are supported?">
+    AI Dispatcher processes job-level events: create, update, and status changes. Technician and team events are handled through the scheduled sync, not webhooks.
+  </Accordion>
+</AccordionGroup>
