@@ -160,6 +160,22 @@ Select multiple suggestions using the checkboxes and use the **Batch Action Bar*
 - Reject a group of suggestions
 - Reassign a batch to a specific technician
 
+## Unassigned Jobs Panel
+
+After generating a schedule, if some jobs could not be assigned to any technician, an **Unassigned Jobs** panel appears in the Dashboard view below the Batch Action Bar. Each unassigned job shows:
+
+- **Job number and customer** — so you can identify the job quickly
+- **Why it wasn't assigned** — a plain-language explanation (e.g., "No technician with the required skills available in the time window")
+- **Possible reasons** — additional contributing factors
+- **Recommended actions** — concrete steps to resolve the issue
+- **Severity badge** — Critical (red), Warning (amber), or Info (blue)
+
+<Note>
+The Unassigned Jobs panel only appears in the **Dashboard** view and only when the schedule has at least one unassigned job. If all jobs were successfully assigned, the panel is hidden.
+</Note>
+
+Address unassigned jobs by resolving the underlying issue in your FSM (adding a required skill to a technician, extending their availability, or adjusting the job's time window), then click **Generate Schedule** again.
+
 ## Conflict Resolution
 
 When the optimizer detects a conflict (overlapping jobs, unavailable technician, time window violation), a **Conflict** badge appears on the affected card. Click it to open the **Conflict Resolver**, which shows the exact issue and suggests corrective actions.
@@ -167,15 +183,6 @@ When the optimizer detects a conflict (overlapping jobs, unavailable technician,
 ## Emergency Jobs
 
 Use the **Emergency Job** button (🚨) to insert an urgent job into the current schedule. The optimizer will re-plan around it and show you which existing assignments need to shift, with an impact summary before you confirm.
-
-## Live Day View
-
-The Live Day View shows real-time technician status:
-- Which technicians are currently on a job
-- Schedule gaps that could be filled
-- Travel-time estimates for the rest of the day
-
-Use the **Gap Filler** cards to quickly assign unscheduled jobs into open time slots.
 
 ## Unavailable Periods
 
