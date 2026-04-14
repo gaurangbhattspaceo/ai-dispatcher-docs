@@ -1,5 +1,5 @@
 {
-  "scannedAt": "2026-04-04T08:02:38.477Z",
+  "scannedAt": "2026-04-14T08:01:32.604Z",
   "codebasePath": "/home/ubuntu/ai-dispatcher",
   "routes": [
     {
@@ -17,10 +17,6 @@
     {
       "path": "/dashboard",
       "file": "src/app/dashboard/page.tsx"
-    },
-    {
-      "path": "/dashboard/ai-chat",
-      "file": "src/app/dashboard/ai-chat/page.tsx"
     },
     {
       "path": "/dashboard/ai-dispatch",
@@ -47,10 +43,6 @@
       "file": "src/app/dashboard/logs/page.tsx"
     },
     {
-      "path": "/dashboard/settings",
-      "file": "src/app/dashboard/settings/page.tsx"
-    },
-    {
       "path": "/dashboard/technicians",
       "file": "src/app/dashboard/technicians/page.tsx"
     },
@@ -61,19 +53,19 @@
   ],
   "apiEndpoints": [
     {
+      "path": "/api/_rl",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/_rl/route.ts"
+    },
+    {
       "path": "/api/admin/queue/clear",
       "methods": [
         "DELETE",
         "GET"
       ],
       "file": "src/app/api/admin/queue/clear/route.ts"
-    },
-    {
-      "path": "/api/agent/chat",
-      "methods": [
-        "POST"
-      ],
-      "file": "src/app/api/agent/chat/route.ts"
     },
     {
       "path": "/api/aidispatch/continuous-planning",
@@ -88,13 +80,6 @@
         "POST"
       ],
       "file": "src/app/api/aidispatch/sequential-planning/route.ts"
-    },
-    {
-      "path": "/api/auth/dev-login",
-      "methods": [
-        "GET"
-      ],
-      "file": "src/app/api/auth/dev-login/route.ts"
     },
     {
       "path": "/api/auth/logout",
@@ -142,20 +127,6 @@
         "PATCH"
       ],
       "file": "src/app/api/dispatch/decisions/route.ts"
-    },
-    {
-      "path": "/api/dispatch/from-ai-agent/optimize",
-      "methods": [
-        "POST"
-      ],
-      "file": "src/app/api/dispatch/from-ai-agent/optimize/route.ts"
-    },
-    {
-      "path": "/api/dispatch/from-ai-agent/plan",
-      "methods": [
-        "GET"
-      ],
-      "file": "src/app/api/dispatch/from-ai-agent/plan/route.ts"
     },
     {
       "path": "/api/dispatch/resync",
@@ -242,34 +213,6 @@
       "file": "src/app/api/health/route.ts"
     },
     {
-      "path": "/api/housecallpro/oauth/callback",
-      "methods": [
-        "GET"
-      ],
-      "file": "src/app/api/housecallpro/oauth/callback/route.ts"
-    },
-    {
-      "path": "/api/housecallpro/oauth/start",
-      "methods": [
-        "GET"
-      ],
-      "file": "src/app/api/housecallpro/oauth/start/route.ts"
-    },
-    {
-      "path": "/api/jobber/oauth/callback",
-      "methods": [
-        "GET"
-      ],
-      "file": "src/app/api/jobber/oauth/callback/route.ts"
-    },
-    {
-      "path": "/api/jobber/oauth/start",
-      "methods": [
-        "GET"
-      ],
-      "file": "src/app/api/jobber/oauth/start/route.ts"
-    },
-    {
       "path": "/api/logs",
       "methods": [
         "GET"
@@ -284,61 +227,11 @@
       "file": "src/app/api/monitoring/route.ts"
     },
     {
-      "path": "/api/organization/dispatch",
-      "methods": [
-        "POST"
-      ],
-      "file": "src/app/api/organization/dispatch/route.ts"
-    },
-    {
-      "path": "/api/organization/dispatch-queue",
-      "methods": [
-        "GET"
-      ],
-      "file": "src/app/api/organization/dispatch-queue/route.ts"
-    },
-    {
-      "path": "/api/organization/info",
-      "methods": [
-        "GET"
-      ],
-      "file": "src/app/api/organization/info/route.ts"
-    },
-    {
-      "path": "/api/organization/settings",
-      "methods": [
-        "GET",
-        "POST"
-      ],
-      "file": "src/app/api/organization/settings/route.ts"
-    },
-    {
-      "path": "/api/organization/sync",
-      "methods": [
-        "POST"
-      ],
-      "file": "src/app/api/organization/sync/route.ts"
-    },
-    {
-      "path": "/api/organization/timezone",
-      "methods": [
-        "GET"
-      ],
-      "file": "src/app/api/organization/timezone/route.ts"
-    },
-    {
       "path": "/api/results/[requestId]",
       "methods": [
         "GET"
       ],
       "file": "src/app/api/results/[requestId]/route.ts"
-    },
-    {
-      "path": "/api/servicetrade/auth/connect",
-      "methods": [
-        "POST"
-      ],
-      "file": "src/app/api/servicetrade/auth/connect/route.ts"
     },
     {
       "path": "/api/v1/fsm/decisions",
@@ -369,73 +262,9 @@
         "POST"
       ],
       "file": "src/app/api/webhook/fieldcamp/jobs/preview/route.ts"
-    },
-    {
-      "path": "/api/webhook/housecallpro/events",
-      "methods": [
-        "POST",
-        "GET"
-      ],
-      "file": "src/app/api/webhook/housecallpro/events/route.ts"
-    },
-    {
-      "path": "/api/webhook/housecallpro/queue",
-      "methods": [
-        "POST",
-        "GET"
-      ],
-      "file": "src/app/api/webhook/housecallpro/queue/route.ts"
-    },
-    {
-      "path": "/api/webhook/jobber/events",
-      "methods": [
-        "POST",
-        "GET"
-      ],
-      "file": "src/app/api/webhook/jobber/events/route.ts"
-    },
-    {
-      "path": "/api/webhook/jobber/queue",
-      "methods": [
-        "POST",
-        "GET"
-      ],
-      "file": "src/app/api/webhook/jobber/queue/route.ts"
-    },
-    {
-      "path": "/api/webhook/servicetrade/events",
-      "methods": [
-        "POST",
-        "GET"
-      ],
-      "file": "src/app/api/webhook/servicetrade/events/route.ts"
-    },
-    {
-      "path": "/api/webhook/servicetrade/queue",
-      "methods": [
-        "POST",
-        "GET"
-      ],
-      "file": "src/app/api/webhook/servicetrade/queue/route.ts"
     }
   ],
   "components": [
-    {
-      "domain": "ai-chat",
-      "count": 10,
-      "files": [
-        "src/components/ai-chat/ChatCodeBlock.tsx",
-        "src/components/ai-chat/ChatContainer.tsx",
-        "src/components/ai-chat/ChatEmptyState.tsx",
-        "src/components/ai-chat/ChatHeader.tsx",
-        "src/components/ai-chat/ChatInput.tsx",
-        "src/components/ai-chat/ChatMessage.tsx",
-        "src/components/ai-chat/ChatMessageContent.tsx",
-        "src/components/ai-chat/ChatMessageList.tsx",
-        "src/components/ai-chat/ChatThinkingIndicator.tsx",
-        "src/components/ai-chat/ChatToolIndicator.tsx"
-      ]
-    },
     {
       "domain": "ai-dispatch",
       "count": 51,
@@ -523,6 +352,13 @@
       ]
     },
     {
+      "domain": "icons",
+      "count": 1,
+      "files": [
+        "src/components/icons/AppIcon.tsx"
+      ]
+    },
+    {
       "domain": "jobs",
       "count": 9,
       "files": [
@@ -580,9 +416,6 @@
       "name": "Session"
     },
     {
-      "name": "FsmConnection"
-    },
-    {
       "name": "JobRequest"
     },
     {
@@ -599,12 +432,6 @@
     },
     {
       "name": "UnassignedJob"
-    },
-    {
-      "name": "DispatchQueueJob"
-    },
-    {
-      "name": "ScoreAnalysisCache"
     }
   ]
 }

@@ -5,113 +5,22 @@ description: Conversational AI assistant for schedule analysis and dispatch plan
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
-# AI Chat
-
-The AI Chat page gives you a conversational interface to your dispatch plan. Ask plain-English questions about your schedule, get constraint explanations, and request optimization changes — without leaving the dashboard.
-
-Navigate to **Dashboard → AI Chat** to open the chat window.
-
-<Frame caption="The AI Chat interface with message input and real-time tool status indicators">
-  <img src="/images/screenshots/ai-chat-interface.png" alt="AI Chat conversation interface" />
-</Frame>
-
-## Getting Started
-
-When you first open AI Chat with no active conversation, the page shows a **"What can I help with?"** welcome screen with four ready-made suggestion cards:
-
-| Card | What It Does |
-|---|---|
-| 👷 **Who's working today?** | Lists all technicians scheduled for the current day |
-| 📋 **What jobs are unassigned?** | Shows every job not yet assigned to a technician |
-| 📅 **Show the full schedule** | Gives a plain-English summary of today's full plan |
-| 🔄 **What if David is sick tomorrow?** | Runs a what-if scenario on technician availability |
-
-Click any card to send that question instantly — no typing needed.
-
-## Chat Controls
-
-Two controls appear in the top header bar and input area:
-
-| Control | Where | What It Does |
-|---|---|---|
-| **+ New chat** (top right) | Header | Clears the current conversation and starts fresh. Disabled while the AI is responding. |
-| **■ Stop** (input bar, right side) | Input | Stops the AI mid-response. The partial reply stays on screen. Only visible while the AI is generating. |
-
-Press **Enter** to send a message. Use **Shift + Enter** for a newline without sending.
-
-## What You Can Ask
-
-The AI assistant has direct access to your live schedule and optimization engine. Some things you can do:
-
-- **Understand the plan:** "Why was John not assigned any jobs today?"
-- **Check conflicts:** "Which jobs have overlapping time windows?"
-- **Analyze workload:** "Who has the most driving today?"
-- **Request changes:** "Move the 2 PM appointment to someone closer to downtown."
-- **Explain scores:** "Why does this assignment have a low confidence score?"
-
-## What Happens While the AI Thinks
-
-While the AI works on your question, you'll see a typing indicator (three animated dots) and a small status label showing exactly what it's doing in real time:
-
-| Status Label | What It Means |
-|---|---|
-| 🔧 Checking schedule... | Reading your current schedule, visits, or solution summary |
-| 🔧 Preparing changes... | Building a plan modification based on your request |
-| 🔧 Confirming update... | Writing the accepted change back to the plan |
-| 🔧 Analyzing constraints... | Examining optimization scores, rule violations, or conflicts |
-| 🔧 Checking feasibility... | Testing whether a requested change is actually possible |
-| 🔧 Processing... | General computation in progress |
-
-These status labels disappear once the AI has finished each step and is ready to reply.
-
-## If Something Goes Wrong
-
-When the AI can't respond, it shows an amber info card in the chat with a bold error title, actionable bullet points explaining what to do, and — for temporary errors — a **Try Again** button you can click to resend your message without retyping it.
-
-| Error Title | What It Means | What to Do |
-|---|---|---|
-| **Scheduling Service Unavailable** | The AI service is under heavy load or temporarily down | Click **Try Again**, or wait a minute and retry |
-| **Scheduling Service Unavailable** (maintenance) | Scheduled maintenance is in progress | Try again in a little while |
-| **Request Timed Out** | Your question took too long to process | Click **Try Again**, or break it into a shorter question |
-| **Too Many Requests** | You've sent a lot of messages quickly | Wait 30 seconds, then click **Try Again** |
-| **Session Expired** | Your login session ended | Refresh the page and log in again |
-| **AI Assistant Not Configured** | AI Chat isn't enabled for your organization | Contact your administrator |
-| **AI Assistant Offline** | The AI service is unreachable | Contact your system administrator |
-| **Connection Lost** | Network connection was interrupted | Check your connection, then click **Try Again** |
-
 <Note>
-The **Try Again** button only appears on temporary, retryable errors. For non-retryable errors (session expired, not configured, offline), follow the "What to Do" guidance above instead.
+**AI Chat was retired in the April 2026 update.** The `/dashboard/ai-chat` route has been removed from the application. Dispatch managers should use the **AI Dispatch** page for schedule analysis and one-off job changes — the AI Dispatcher optimization engine handles the same reasoning tasks and is the supported path for dispatch decisions going forward.
 </Note>
 
-## How It Works
+## What Was AI Chat?
 
-The AI assistant uses the same optimization engine that powers the AI Dispatch page. When you ask it to make a change, it:
+AI Chat previously gave dispatch managers a conversational interface to ask plain-English questions about their schedule, request optimization changes, and investigate specific job or technician assignments.
 
-1. Reads the current schedule and constraints
-2. Evaluates whether the change is feasible
-3. Shows you a preview of the impact
-4. Applies the change only after you confirm
+## What to Use Instead
 
-<Note>
-The AI Chat assistant does **not** automatically write changes to your FSM. Changes made through chat update the AI Dispatcher plan; you still review and accept them on the AI Dispatch page before they sync back.
-</Note>
-
-## Message Actions
-
-Hover over any completed assistant message to reveal two small icon buttons below the text:
-
-| Button | What It Does |
+| AI Chat Task | Replacement |
 |---|---|
-| **Copy** (📋 icon) | Copies the full message text to your clipboard. The icon briefly turns into a checkmark (✓) to confirm. |
-| **Retry** (↺ icon) | Re-sends your last question from scratch if you want a fresh response. Only appears on the most recent assistant reply. |
+| Understand why a job is unassigned | Check the **Unassigned Jobs Panel** on the AI Dispatch page |
+| See who is working today | Filter the **Technicians** page by today's date |
+| Request a job reassignment | Use the **Reassignment Dialog** on the AI Dispatch page |
+| Explain why a suggestion scored low | Check the **Confidence Score** and **AI Reasoning** panel on each suggestion card |
+| One-off schedule changes | Click **Generate Schedule** on AI Dispatch, or use the **Reassignment Dialog** for specific changes |
 
-<Note>
-The Retry hover button re-runs the last question without any changes. If you want to ask a slightly different question, just type a new message instead.
-</Note>
-
-## Tips for Best Results
-
-- Be specific: "Move job #1234 to Sarah" works better than "reassign that job"
-- Ask one thing at a time for complex changes
-- If the AI says a change isn't feasible, ask it why — it can explain the exact constraint blocking it
-- Use the **AI Dispatch** page for bulk approvals; use **AI Chat** for investigation and one-off adjustments
+See the [AI Dispatch documentation](/dashboard/ai-dispatch) for the full workflow.
