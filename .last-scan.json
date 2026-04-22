@@ -1,5 +1,5 @@
 {
-  "scannedAt": "2026-04-14T08:01:32.604Z",
+  "scannedAt": "2026-04-22T08:00:08.878Z",
   "codebasePath": "/home/ubuntu/ai-dispatcher",
   "routes": [
     {
@@ -11,28 +11,88 @@
       "file": "src/app/auth/error/page.tsx"
     },
     {
+      "path": "/auth/forgot-password",
+      "file": "src/app/auth/forgot-password/page.tsx"
+    },
+    {
       "path": "/auth/login",
       "file": "src/app/auth/login/page.tsx"
+    },
+    {
+      "path": "/auth/reset-password",
+      "file": "src/app/auth/reset-password/page.tsx"
+    },
+    {
+      "path": "/auth/signup",
+      "file": "src/app/auth/signup/page.tsx"
+    },
+    {
+      "path": "/book/[token]",
+      "file": "src/app/book/[token]/page.tsx"
     },
     {
       "path": "/dashboard",
       "file": "src/app/dashboard/page.tsx"
     },
     {
+      "path": "/dashboard/admin/announcements",
+      "file": "src/app/dashboard/admin/announcements/page.tsx"
+    },
+    {
+      "path": "/dashboard/agents",
+      "file": "src/app/dashboard/agents/page.tsx"
+    },
+    {
+      "path": "/dashboard/agents/[agentId]",
+      "file": "src/app/dashboard/agents/[agentId]/page.tsx"
+    },
+    {
+      "path": "/dashboard/agents/[agentId]/edit",
+      "file": "src/app/dashboard/agents/[agentId]/edit/page.tsx"
+    },
+    {
+      "path": "/dashboard/agents/new",
+      "file": "src/app/dashboard/agents/new/page.tsx"
+    },
+    {
+      "path": "/dashboard/agents/templates",
+      "file": "src/app/dashboard/agents/templates/page.tsx"
+    },
+    {
+      "path": "/dashboard/ai-chat",
+      "file": "src/app/dashboard/ai-chat/page.tsx"
+    },
+    {
       "path": "/dashboard/ai-dispatch",
       "file": "src/app/dashboard/ai-dispatch/page.tsx"
+    },
+    {
+      "path": "/dashboard/analytics",
+      "file": "src/app/dashboard/analytics/page.tsx"
     },
     {
       "path": "/dashboard/calendar",
       "file": "src/app/dashboard/calendar/page.tsx"
     },
     {
+      "path": "/dashboard/calendar2",
+      "file": "src/app/dashboard/calendar2/page.tsx"
+    },
+    {
       "path": "/dashboard/capacity",
       "file": "src/app/dashboard/capacity/page.tsx"
     },
     {
+      "path": "/dashboard/chat",
+      "file": "src/app/dashboard/chat/page.tsx"
+    },
+    {
       "path": "/dashboard/debug",
       "file": "src/app/dashboard/debug/page.tsx"
+    },
+    {
+      "path": "/dashboard/dispatch",
+      "file": "src/app/dashboard/dispatch/page.tsx"
     },
     {
       "path": "/dashboard/jobs",
@@ -43,22 +103,119 @@
       "file": "src/app/dashboard/logs/page.tsx"
     },
     {
+      "path": "/dashboard/settings/ai-dispatcher",
+      "file": "src/app/dashboard/settings/ai-dispatcher/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/billing",
+      "file": "src/app/dashboard/settings/billing/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/booking-links",
+      "file": "src/app/dashboard/settings/booking-links/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/company",
+      "file": "src/app/dashboard/settings/company/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/connected-apps",
+      "file": "src/app/dashboard/settings/connected-apps/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/connectors",
+      "file": "src/app/dashboard/settings/connectors/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/experience",
+      "file": "src/app/dashboard/settings/experience/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/general",
+      "file": "src/app/dashboard/settings/general/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/jobs",
+      "file": "src/app/dashboard/settings/jobs/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/profile",
+      "file": "src/app/dashboard/settings/profile/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/service-areas",
+      "file": "src/app/dashboard/settings/service-areas/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/share-links",
+      "file": "src/app/dashboard/settings/share-links/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/support",
+      "file": "src/app/dashboard/settings/support/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/team-members",
+      "file": "src/app/dashboard/settings/team-members/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/team-members/[id]/edit",
+      "file": "src/app/dashboard/settings/team-members/[id]/edit/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/team-members/new",
+      "file": "src/app/dashboard/settings/team-members/new/page.tsx"
+    },
+    {
+      "path": "/dashboard/settings/workspaces",
+      "file": "src/app/dashboard/settings/workspaces/page.tsx"
+    },
+    {
+      "path": "/dashboard/support",
+      "file": "src/app/dashboard/support/page.tsx"
+    },
+    {
       "path": "/dashboard/technicians",
       "file": "src/app/dashboard/technicians/page.tsx"
     },
     {
+      "path": "/dashboard/technicians/[id]",
+      "file": "src/app/dashboard/technicians/[id]/page.tsx"
+    },
+    {
       "path": "/dashboard/webhook-test",
       "file": "src/app/dashboard/webhook-test/page.tsx"
+    },
+    {
+      "path": "/invite/[token]",
+      "file": "src/app/invite/[token]/page.tsx"
+    },
+    {
+      "path": "/manifest/[token]",
+      "file": "src/app/manifest/[token]/page.tsx"
+    },
+    {
+      "path": "/onboarding",
+      "file": "src/app/onboarding/page.tsx"
+    },
+    {
+      "path": "/pricing",
+      "file": "src/app/pricing/page.tsx"
+    },
+    {
+      "path": "/privacy",
+      "file": "src/app/privacy/page.tsx"
+    },
+    {
+      "path": "/status",
+      "file": "src/app/status/page.tsx"
+    },
+    {
+      "path": "/terms",
+      "file": "src/app/terms/page.tsx"
     }
   ],
   "apiEndpoints": [
-    {
-      "path": "/api/_rl",
-      "methods": [
-        "POST"
-      ],
-      "file": "src/app/api/_rl/route.ts"
-    },
     {
       "path": "/api/admin/queue/clear",
       "methods": [
@@ -66,6 +223,92 @@
         "GET"
       ],
       "file": "src/app/api/admin/queue/clear/route.ts"
+    },
+    {
+      "path": "/api/agent/chat",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/agent/chat/route.ts"
+    },
+    {
+      "path": "/api/agents",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "file": "src/app/api/agents/route.ts"
+    },
+    {
+      "path": "/api/agents/[agentId]",
+      "methods": [
+        "GET",
+        "PATCH"
+      ],
+      "file": "src/app/api/agents/[agentId]/route.ts"
+    },
+    {
+      "path": "/api/agents/[agentId]/approval-batches",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/agents/[agentId]/approval-batches/route.ts"
+    },
+    {
+      "path": "/api/agents/[agentId]/run",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/agents/[agentId]/run/route.ts"
+    },
+    {
+      "path": "/api/agents/[agentId]/runs",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/agents/[agentId]/runs/route.ts"
+    },
+    {
+      "path": "/api/agents/approval-batches/[batchId]",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/agents/approval-batches/[batchId]/route.ts"
+    },
+    {
+      "path": "/api/agents/approval-batches/[batchId]/approve",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/agents/approval-batches/[batchId]/approve/route.ts"
+    },
+    {
+      "path": "/api/agents/approval-batches/[batchId]/reject",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/agents/approval-batches/[batchId]/reject/route.ts"
+    },
+    {
+      "path": "/api/agents/attention",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/agents/attention/route.ts"
+    },
+    {
+      "path": "/api/agents/runner",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/agents/runner/route.ts"
+    },
+    {
+      "path": "/api/agents/templates",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/agents/templates/route.ts"
     },
     {
       "path": "/api/aidispatch/continuous-planning",
@@ -80,6 +323,64 @@
         "POST"
       ],
       "file": "src/app/api/aidispatch/sequential-planning/route.ts"
+    },
+    {
+      "path": "/api/analytics",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/analytics/route.ts"
+    },
+    {
+      "path": "/api/announcements",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "file": "src/app/api/announcements/route.ts"
+    },
+    {
+      "path": "/api/announcements/[id]",
+      "methods": [
+        "PATCH",
+        "DELETE"
+      ],
+      "file": "src/app/api/announcements/[id]/route.ts"
+    },
+    {
+      "path": "/api/announcements/active",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/announcements/active/route.ts"
+    },
+    {
+      "path": "/api/auth/change-password",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/auth/change-password/route.ts"
+    },
+    {
+      "path": "/api/auth/deactivate",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/auth/deactivate/route.ts"
+    },
+    {
+      "path": "/api/auth/forgot-password",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/auth/forgot-password/route.ts"
+    },
+    {
+      "path": "/api/auth/login",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/auth/login/route.ts"
     },
     {
       "path": "/api/auth/logout",
@@ -97,11 +398,225 @@
       "file": "src/app/api/auth/me/route.ts"
     },
     {
+      "path": "/api/auth/profile",
+      "methods": [
+        "GET",
+        "PATCH"
+      ],
+      "file": "src/app/api/auth/profile/route.ts"
+    },
+    {
+      "path": "/api/auth/reset-password",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/auth/reset-password/route.ts"
+    },
+    {
+      "path": "/api/auth/signup",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/auth/signup/route.ts"
+    },
+    {
+      "path": "/api/auth/signup-invite",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/auth/signup-invite/route.ts"
+    },
+    {
       "path": "/api/auth/sso",
       "methods": [
         "GET"
       ],
       "file": "src/app/api/auth/sso/route.ts"
+    },
+    {
+      "path": "/api/automation/login",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/automation/login/route.ts"
+    },
+    {
+      "path": "/api/automation/process",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/automation/process/route.ts"
+    },
+    {
+      "path": "/api/billing/cancel",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/billing/cancel/route.ts"
+    },
+    {
+      "path": "/api/billing/cancel-downgrade",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/billing/cancel-downgrade/route.ts"
+    },
+    {
+      "path": "/api/billing/checkout",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/billing/checkout/route.ts"
+    },
+    {
+      "path": "/api/billing/invoices",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/billing/invoices/route.ts"
+    },
+    {
+      "path": "/api/billing/invoices/[id]/pdf",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/billing/invoices/[id]/pdf/route.ts"
+    },
+    {
+      "path": "/api/billing/portal",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/billing/portal/route.ts"
+    },
+    {
+      "path": "/api/billing/reactivate",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/billing/reactivate/route.ts"
+    },
+    {
+      "path": "/api/billing/subscription",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/billing/subscription/route.ts"
+    },
+    {
+      "path": "/api/billing/webhook",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/billing/webhook/route.ts"
+    },
+    {
+      "path": "/api/billing/webhook/sandbox",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/billing/webhook/sandbox/route.ts"
+    },
+    {
+      "path": "/api/book/[token]",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "file": "src/app/api/book/[token]/route.ts"
+    },
+    {
+      "path": "/api/book/[token]/calendar",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/book/[token]/calendar/route.ts"
+    },
+    {
+      "path": "/api/book/[token]/jobs/[jobId]/decision",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/book/[token]/jobs/[jobId]/decision/route.ts"
+    },
+    {
+      "path": "/api/book/[token]/jobs/[jobId]/suggestion",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/book/[token]/jobs/[jobId]/suggestion/route.ts"
+    },
+    {
+      "path": "/api/booking-links",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "file": "src/app/api/booking-links/route.ts"
+    },
+    {
+      "path": "/api/booking-links/[id]",
+      "methods": [
+        "PATCH",
+        "DELETE"
+      ],
+      "file": "src/app/api/booking-links/[id]/route.ts"
+    },
+    {
+      "path": "/api/calendar2/pending",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/calendar2/pending/route.ts"
+    },
+    {
+      "path": "/api/calendar2/suggestions",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/calendar2/suggestions/route.ts"
+    },
+    {
+      "path": "/api/calendar2/technicians",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/calendar2/technicians/route.ts"
+    },
+    {
+      "path": "/api/calendar2/visits",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/calendar2/visits/route.ts"
+    },
+    {
+      "path": "/api/connectors/status",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/connectors/status/route.ts"
+    },
+    {
+      "path": "/api/credits/balance",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/credits/balance/route.ts"
+    },
+    {
+      "path": "/api/credits/history",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/credits/history/route.ts"
+    },
+    {
+      "path": "/api/credits/purchase",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/credits/purchase/route.ts"
     },
     {
       "path": "/api/debug/requests",
@@ -110,6 +625,13 @@
         "POST"
       ],
       "file": "src/app/api/debug/requests/route.ts"
+    },
+    {
+      "path": "/api/dispatch/bulk-decision",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/dispatch/bulk-decision/route.ts"
     },
     {
       "path": "/api/dispatch/cleanup",
@@ -129,6 +651,34 @@
       "file": "src/app/api/dispatch/decisions/route.ts"
     },
     {
+      "path": "/api/dispatch/from-ai-agent/optimize",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/dispatch/from-ai-agent/optimize/route.ts"
+    },
+    {
+      "path": "/api/dispatch/from-ai-agent/plan",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/dispatch/from-ai-agent/plan/route.ts"
+    },
+    {
+      "path": "/api/dispatch/recovery-assist",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/dispatch/recovery-assist/route.ts"
+    },
+    {
+      "path": "/api/dispatch/reoptimize",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/dispatch/reoptimize/route.ts"
+    },
+    {
       "path": "/api/dispatch/resync",
       "methods": [
         "POST"
@@ -136,11 +686,69 @@
       "file": "src/app/api/dispatch/resync/route.ts"
     },
     {
+      "path": "/api/dispatch/run",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/dispatch/run/route.ts"
+    },
+    {
       "path": "/api/dispatch/suggestions",
       "methods": [
         "GET"
       ],
       "file": "src/app/api/dispatch/suggestions/route.ts"
+    },
+    {
+      "path": "/api/dispatch/team-capacity",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/dispatch/team-capacity/route.ts"
+    },
+    {
+      "path": "/api/dynamics365/auth",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/dynamics365/auth/route.ts"
+    },
+    {
+      "path": "/api/dynamics365/callback",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/dynamics365/callback/route.ts"
+    },
+    {
+      "path": "/api/dynamics365/disconnect",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/dynamics365/disconnect/route.ts"
+    },
+    {
+      "path": "/api/dynamics365/sync",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/dynamics365/sync/route.ts"
+    },
+    {
+      "path": "/api/equipment",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "file": "src/app/api/equipment/route.ts"
+    },
+    {
+      "path": "/api/equipment/[id]",
+      "methods": [
+        "PATCH",
+        "DELETE"
+      ],
+      "file": "src/app/api/equipment/[id]/route.ts"
     },
     {
       "path": "/api/fieldcamp/companyBusinessInfo",
@@ -213,11 +821,201 @@
       "file": "src/app/api/health/route.ts"
     },
     {
+      "path": "/api/housecallpro/auth",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/housecallpro/auth/route.ts"
+    },
+    {
+      "path": "/api/housecallpro/callback",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/housecallpro/callback/route.ts"
+    },
+    {
+      "path": "/api/housecallpro/disconnect",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/housecallpro/disconnect/route.ts"
+    },
+    {
+      "path": "/api/housecallpro/sync",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/housecallpro/sync/route.ts"
+    },
+    {
+      "path": "/api/job-types",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "file": "src/app/api/job-types/route.ts"
+    },
+    {
+      "path": "/api/job-types/[id]",
+      "methods": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "file": "src/app/api/job-types/[id]/route.ts"
+    },
+    {
+      "path": "/api/jobber/auth",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/jobber/auth/route.ts"
+    },
+    {
+      "path": "/api/jobber/callback",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/jobber/callback/route.ts"
+    },
+    {
+      "path": "/api/jobber/disconnect",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/jobber/disconnect/route.ts"
+    },
+    {
+      "path": "/api/jobber/sync",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/jobber/sync/route.ts"
+    },
+    {
+      "path": "/api/jobs",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "file": "src/app/api/jobs/route.ts"
+    },
+    {
+      "path": "/api/jobs/[id]",
+      "methods": [
+        "GET",
+        "PUT",
+        "DELETE"
+      ],
+      "file": "src/app/api/jobs/[id]/route.ts"
+    },
+    {
+      "path": "/api/jobs/[id]/confirm-booking",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/jobs/[id]/confirm-booking/route.ts"
+    },
+    {
+      "path": "/api/jobs/awaiting-confirmation",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/jobs/awaiting-confirmation/route.ts"
+    },
+    {
+      "path": "/api/jobs/delete-by-tab",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/jobs/delete-by-tab/route.ts"
+    },
+    {
+      "path": "/api/jobs/export",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/jobs/export/route.ts"
+    },
+    {
+      "path": "/api/jobs/import",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/jobs/import/route.ts"
+    },
+    {
+      "path": "/api/jobs/visits",
+      "methods": [
+        "GET",
+        "DELETE",
+        "PUT"
+      ],
+      "file": "src/app/api/jobs/visits/route.ts"
+    },
+    {
       "path": "/api/logs",
       "methods": [
         "GET"
       ],
       "file": "src/app/api/logs/route.ts"
+    },
+    {
+      "path": "/api/manifest/[token]",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/manifest/[token]/route.ts"
+    },
+    {
+      "path": "/api/manifest/csv",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/manifest/csv/route.ts"
+    },
+    {
+      "path": "/api/manifest/email",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/manifest/email/route.ts"
+    },
+    {
+      "path": "/api/manifest/email/recipients",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/manifest/email/recipients/route.ts"
+    },
+    {
+      "path": "/api/manifest/pdf",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/manifest/pdf/route.ts"
+    },
+    {
+      "path": "/api/manifest/share",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/manifest/share/route.ts"
+    },
+    {
+      "path": "/api/manifest/shares",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/manifest/shares/route.ts"
+    },
+    {
+      "path": "/api/manifest/shares/[id]",
+      "methods": [
+        "PATCH"
+      ],
+      "file": "src/app/api/manifest/shares/[id]/route.ts"
     },
     {
       "path": "/api/monitoring",
@@ -227,11 +1025,312 @@
       "file": "src/app/api/monitoring/route.ts"
     },
     {
+      "path": "/api/onboarding/ai-settings",
+      "methods": [
+        "PATCH"
+      ],
+      "file": "src/app/api/onboarding/ai-settings/route.ts"
+    },
+    {
+      "path": "/api/onboarding/company",
+      "methods": [
+        "PATCH"
+      ],
+      "file": "src/app/api/onboarding/company/route.ts"
+    },
+    {
+      "path": "/api/onboarding/demo-data",
+      "methods": [
+        "DELETE"
+      ],
+      "file": "src/app/api/onboarding/demo-data/route.ts"
+    },
+    {
+      "path": "/api/onboarding/demo-jobs",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/onboarding/demo-jobs/route.ts"
+    },
+    {
+      "path": "/api/onboarding/demo-team",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/onboarding/demo-team/route.ts"
+    },
+    {
+      "path": "/api/onboarding/job",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/onboarding/job/route.ts"
+    },
+    {
+      "path": "/api/onboarding/job-types",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/onboarding/job-types/route.ts"
+    },
+    {
+      "path": "/api/onboarding/progress",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/onboarding/progress/route.ts"
+    },
+    {
+      "path": "/api/onboarding/setup",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/onboarding/setup/route.ts"
+    },
+    {
+      "path": "/api/onboarding/skills",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/onboarding/skills/route.ts"
+    },
+    {
+      "path": "/api/onboarding/team-member",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/onboarding/team-member/route.ts"
+    },
+    {
       "path": "/api/results/[requestId]",
       "methods": [
         "GET"
       ],
       "file": "src/app/api/results/[requestId]/route.ts"
+    },
+    {
+      "path": "/api/salesforce/auth",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/salesforce/auth/route.ts"
+    },
+    {
+      "path": "/api/salesforce/callback",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/salesforce/callback/route.ts"
+    },
+    {
+      "path": "/api/salesforce/disconnect",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/salesforce/disconnect/route.ts"
+    },
+    {
+      "path": "/api/salesforce/settings",
+      "methods": [
+        "GET",
+        "PATCH"
+      ],
+      "file": "src/app/api/salesforce/settings/route.ts"
+    },
+    {
+      "path": "/api/salesforce/sync",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/salesforce/sync/route.ts"
+    },
+    {
+      "path": "/api/service-areas",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "file": "src/app/api/service-areas/route.ts"
+    },
+    {
+      "path": "/api/service-areas/[id]",
+      "methods": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "file": "src/app/api/service-areas/[id]/route.ts"
+    },
+    {
+      "path": "/api/service-areas/status",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/service-areas/status/route.ts"
+    },
+    {
+      "path": "/api/servicetrade/auth/connect",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/servicetrade/auth/connect/route.ts"
+    },
+    {
+      "path": "/api/servicetrade/disconnect",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/servicetrade/disconnect/route.ts"
+    },
+    {
+      "path": "/api/servicetrade/dispatch",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/servicetrade/dispatch/route.ts"
+    },
+    {
+      "path": "/api/servicetrade/sync",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/servicetrade/sync/route.ts"
+    },
+    {
+      "path": "/api/skills",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "file": "src/app/api/skills/route.ts"
+    },
+    {
+      "path": "/api/skills/[id]",
+      "methods": [
+        "PATCH",
+        "DELETE"
+      ],
+      "file": "src/app/api/skills/[id]/route.ts"
+    },
+    {
+      "path": "/api/skills/categories",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/skills/categories/route.ts"
+    },
+    {
+      "path": "/api/standalone-dispatch",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/standalone-dispatch/route.ts"
+    },
+    {
+      "path": "/api/support/tickets",
+      "methods": [
+        "POST",
+        "GET"
+      ],
+      "file": "src/app/api/support/tickets/route.ts"
+    },
+    {
+      "path": "/api/support/tickets/[id]",
+      "methods": [
+        "GET",
+        "PATCH"
+      ],
+      "file": "src/app/api/support/tickets/[id]/route.ts"
+    },
+    {
+      "path": "/api/support/tickets/[id]/comments",
+      "methods": [
+        "POST",
+        "GET"
+      ],
+      "file": "src/app/api/support/tickets/[id]/comments/route.ts"
+    },
+    {
+      "path": "/api/tags",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "file": "src/app/api/tags/route.ts"
+    },
+    {
+      "path": "/api/tags/[id]",
+      "methods": [
+        "PATCH",
+        "DELETE"
+      ],
+      "file": "src/app/api/tags/[id]/route.ts"
+    },
+    {
+      "path": "/api/team-members",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "file": "src/app/api/team-members/route.ts"
+    },
+    {
+      "path": "/api/team-members/[id]",
+      "methods": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "file": "src/app/api/team-members/[id]/route.ts"
+    },
+    {
+      "path": "/api/team-members/bulk-delete",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/team-members/bulk-delete/route.ts"
+    },
+    {
+      "path": "/api/team-members/check-locations",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/team-members/check-locations/route.ts"
+    },
+    {
+      "path": "/api/team-members/export",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/team-members/export/route.ts"
+    },
+    {
+      "path": "/api/team-members/import",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/team-members/import/route.ts"
+    },
+    {
+      "path": "/api/team-members/promote-self",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/team-members/promote-self/route.ts"
+    },
+    {
+      "path": "/api/technicians",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/technicians/route.ts"
+    },
+    {
+      "path": "/api/technicians/[id]",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/technicians/[id]/route.ts"
     },
     {
       "path": "/api/v1/fsm/decisions",
@@ -249,6 +1348,20 @@
       "file": "src/app/api/v1/fsm/suggestions/route.ts"
     },
     {
+      "path": "/api/voice/session",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/voice/session/route.ts"
+    },
+    {
+      "path": "/api/voice/tool-call",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/voice/tool-call/route.ts"
+    },
+    {
       "path": "/api/webhook/fieldcamp/jobs",
       "methods": [
         "POST",
@@ -262,12 +1375,141 @@
         "POST"
       ],
       "file": "src/app/api/webhook/fieldcamp/jobs/preview/route.ts"
+    },
+    {
+      "path": "/api/webhook/jobber",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/webhook/jobber/route.ts"
+    },
+    {
+      "path": "/api/workspace/ai-dispatcher-settings",
+      "methods": [
+        "GET",
+        "PUT"
+      ],
+      "file": "src/app/api/workspace/ai-dispatcher-settings/route.ts"
+    },
+    {
+      "path": "/api/workspace/company-info",
+      "methods": [
+        "GET",
+        "PUT"
+      ],
+      "file": "src/app/api/workspace/company-info/route.ts"
+    },
+    {
+      "path": "/api/workspace/company-schedule",
+      "methods": [
+        "GET",
+        "PUT"
+      ],
+      "file": "src/app/api/workspace/company-schedule/route.ts"
+    },
+    {
+      "path": "/api/workspace/invites",
+      "methods": [
+        "POST",
+        "GET"
+      ],
+      "file": "src/app/api/workspace/invites/route.ts"
+    },
+    {
+      "path": "/api/workspace/invites/[id]",
+      "methods": [
+        "DELETE"
+      ],
+      "file": "src/app/api/workspace/invites/[id]/route.ts"
+    },
+    {
+      "path": "/api/workspace/invites/validate/[token]",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/workspace/invites/validate/[token]/route.ts"
+    },
+    {
+      "path": "/api/workspace/members",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/workspace/members/route.ts"
+    },
+    {
+      "path": "/api/workspace/members/[userId]",
+      "methods": [
+        "DELETE"
+      ],
+      "file": "src/app/api/workspace/members/[userId]/route.ts"
+    },
+    {
+      "path": "/api/workspace/settings",
+      "methods": [
+        "GET",
+        "PUT"
+      ],
+      "file": "src/app/api/workspace/settings/route.ts"
+    },
+    {
+      "path": "/api/workspace/timezone",
+      "methods": [
+        "GET"
+      ],
+      "file": "src/app/api/workspace/timezone/route.ts"
+    },
+    {
+      "path": "/api/workspaces",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "file": "src/app/api/workspaces/route.ts"
+    },
+    {
+      "path": "/api/workspaces/[id]",
+      "methods": [
+        "PATCH",
+        "DELETE"
+      ],
+      "file": "src/app/api/workspaces/[id]/route.ts"
+    },
+    {
+      "path": "/api/workspaces/[id]/activate",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/workspaces/[id]/activate/route.ts"
     }
   ],
   "components": [
     {
+      "domain": "agents",
+      "count": 2,
+      "files": [
+        "src/components/agents/AgentFormSections.tsx",
+        "src/components/agents/ApprovalBatchModal.tsx"
+      ]
+    },
+    {
+      "domain": "ai-chat",
+      "count": 10,
+      "files": [
+        "src/components/ai-chat/ChatCodeBlock.tsx",
+        "src/components/ai-chat/ChatContainer.tsx",
+        "src/components/ai-chat/ChatEmptyState.tsx",
+        "src/components/ai-chat/ChatHeader.tsx",
+        "src/components/ai-chat/ChatInput.tsx",
+        "src/components/ai-chat/ChatMessage.tsx",
+        "src/components/ai-chat/ChatMessageContent.tsx",
+        "src/components/ai-chat/ChatMessageList.tsx",
+        "src/components/ai-chat/ChatThinkingIndicator.tsx",
+        "src/components/ai-chat/ChatToolIndicator.tsx"
+      ]
+    },
+    {
       "domain": "ai-dispatch",
-      "count": 51,
+      "count": 52,
       "files": [
         "src/components/ai-dispatch/AIReasoning.tsx",
         "src/components/ai-dispatch/AIReasoningPanel.tsx",
@@ -295,6 +1537,7 @@
         "src/components/ai-dispatch/TechnicianScheduleView.tsx",
         "src/components/ai-dispatch/UnassignedJobsPanel.tsx",
         "src/components/ai-dispatch/UnavailablePeriodsManager.tsx",
+        "src/components/ai-dispatch/UpgradeInsightBanner.tsx",
         "src/components/ai-dispatch/UtilizationBar.tsx",
         "src/components/ai-dispatch/ViewSwitcher.tsx",
         "src/components/ai-dispatch/customer/AlternativeTimeSlots.tsx",
@@ -323,11 +1566,34 @@
       ]
     },
     {
+      "domain": "announcements",
+      "count": 1,
+      "files": [
+        "src/components/announcements/StatusBanner.tsx"
+      ]
+    },
+    {
+      "domain": "auth",
+      "count": 1,
+      "files": [
+        "src/components/auth/AuthWrapper.tsx"
+      ]
+    },
+    {
+      "domain": "billing",
+      "count": 2,
+      "files": [
+        "src/components/billing/CreditBadge.tsx",
+        "src/components/billing/UpgradeModal.tsx"
+      ]
+    },
+    {
       "domain": "calendar",
-      "count": 6,
+      "count": 7,
       "files": [
         "src/components/calendar/AINotificationBar.tsx",
         "src/components/calendar/CalendarMapView.tsx",
+        "src/components/calendar/EventPopover.tsx",
         "src/components/calendar/JobDetailCard.tsx",
         "src/components/calendar/QuickActions.tsx",
         "src/components/calendar/RejectReasonDialog.tsx",
@@ -344,11 +1610,31 @@
       ]
     },
     {
+      "domain": "chat",
+      "count": 1,
+      "files": [
+        "src/components/chat/ChatHistoryDropdown.tsx"
+      ]
+    },
+    {
       "domain": "csv-upload",
       "count": 2,
       "files": [
         "src/components/csv-upload/CSVDataPreview.tsx",
         "src/components/csv-upload/CSVUploadCard.tsx"
+      ]
+    },
+    {
+      "domain": "dispatch",
+      "count": 7,
+      "files": [
+        "src/components/dispatch/ActionPanel.tsx",
+        "src/components/dispatch/DailySummary.tsx",
+        "src/components/dispatch/EventBar.tsx",
+        "src/components/dispatch/MapPanel.tsx",
+        "src/components/dispatch/TechAvatar.tsx",
+        "src/components/dispatch/TimelinePanel.tsx",
+        "src/components/dispatch/types.ts"
       ]
     },
     {
@@ -360,8 +1646,11 @@
     },
     {
       "domain": "jobs",
-      "count": 9,
+      "count": 13,
       "files": [
+        "src/components/jobs/CreateJobDialog.tsx",
+        "src/components/jobs/EditJobDialog.tsx",
+        "src/components/jobs/ImportJobsDialog.tsx",
         "src/components/jobs/JobCard.tsx",
         "src/components/jobs/JobCustomerInfo.tsx",
         "src/components/jobs/JobHeader.tsx",
@@ -370,7 +1659,57 @@
         "src/components/jobs/JobTimeWindow.tsx",
         "src/components/jobs/JobTypeBadge.tsx",
         "src/components/jobs/JobsFilter.tsx",
-        "src/components/jobs/JobsList.tsx"
+        "src/components/jobs/JobsList.tsx",
+        "src/components/jobs/RejectReasonModal.tsx"
+      ]
+    },
+    {
+      "domain": "layout",
+      "count": 2,
+      "files": [
+        "src/components/layout/AssistantAttentionCenter.tsx",
+        "src/components/layout/ZenSidebar.tsx"
+      ]
+    },
+    {
+      "domain": "manifest",
+      "count": 6,
+      "files": [
+        "src/components/manifest/EmailScheduleDialog.tsx",
+        "src/components/manifest/ManifestExportButton.tsx",
+        "src/components/manifest/ManifestHeader.tsx",
+        "src/components/manifest/ManifestJobCard.tsx",
+        "src/components/manifest/ManifestRouteMap.tsx",
+        "src/components/manifest/ManifestTechSection.tsx"
+      ]
+    },
+    {
+      "domain": "onboarding",
+      "count": 16,
+      "files": [
+        "src/components/onboarding/CalendarOverlay.tsx",
+        "src/components/onboarding/ChatQuickActions.tsx",
+        "src/components/onboarding/DemoDataBanner.tsx",
+        "src/components/onboarding/IndustrySelector.tsx",
+        "src/components/onboarding/OnboardingChatBubble.tsx",
+        "src/components/onboarding/OnboardingChatPanel.tsx",
+        "src/components/onboarding/OnboardingChatProvider.tsx",
+        "src/components/onboarding/OnboardingChecklist.tsx",
+        "src/components/onboarding/OnboardingWizard.tsx",
+        "src/components/onboarding/QuickJobForm.tsx",
+        "src/components/onboarding/SettingsPreview.tsx",
+        "src/components/onboarding/SkipConfirmationDialog.tsx",
+        "src/components/onboarding/StepAISettings.tsx",
+        "src/components/onboarding/StepCompanyBasics.tsx",
+        "src/components/onboarding/StepJobs.tsx",
+        "src/components/onboarding/StepTeam.tsx"
+      ]
+    },
+    {
+      "domain": "team",
+      "count": 1,
+      "files": [
+        "src/components/team/ImportTeamMembersDialog.tsx"
       ]
     },
     {
@@ -386,28 +1725,110 @@
     },
     {
       "domain": "ui",
-      "count": 14,
+      "count": 27,
       "files": [
         "src/components/ui/badge.tsx",
         "src/components/ui/button.tsx",
         "src/components/ui/calendar.tsx",
         "src/components/ui/card.tsx",
         "src/components/ui/checkbox.tsx",
+        "src/components/ui/confetti.tsx",
+        "src/components/ui/confirm-modal.tsx",
+        "src/components/ui/contextual-nudge.tsx",
+        "src/components/ui/data-table.tsx",
         "src/components/ui/date-range-picker.tsx",
         "src/components/ui/dialog.tsx",
         "src/components/ui/dropdown-menu.tsx",
+        "src/components/ui/google-places-autocomplete.tsx",
         "src/components/ui/input.tsx",
         "src/components/ui/label.tsx",
+        "src/components/ui/multi-select-dropdown.tsx",
         "src/components/ui/popover.tsx",
+        "src/components/ui/radio-group.tsx",
         "src/components/ui/select.tsx",
+        "src/components/ui/skills-input.tsx",
+        "src/components/ui/specific-hours-dialog.tsx",
+        "src/components/ui/tabs.tsx",
         "src/components/ui/textarea.tsx",
-        "src/components/ui/tooltip.tsx"
+        "src/components/ui/toast.tsx",
+        "src/components/ui/toggle-switch.tsx",
+        "src/components/ui/tooltip.tsx",
+        "src/components/ui/turnstile-widget.tsx"
+      ]
+    },
+    {
+      "domain": "voice",
+      "count": 1,
+      "files": [
+        "src/components/voice/VoiceAssistant.tsx"
+      ]
+    },
+    {
+      "domain": "workspace",
+      "count": 2,
+      "files": [
+        "src/components/workspace/InviteLinkModal.tsx",
+        "src/components/workspace/WorkspaceCollaborators.tsx"
       ]
     }
   ],
   "models": [
     {
+      "name": "Workspace"
+    },
+    {
+      "name": "AgentTemplate"
+    },
+    {
+      "name": "Agent"
+    },
+    {
+      "name": "AgentRun"
+    },
+    {
+      "name": "AgentApprovalBatch"
+    },
+    {
+      "name": "AgentApprovalItem"
+    },
+    {
+      "name": "WorkspaceInvite"
+    },
+    {
+      "name": "ManifestShare"
+    },
+    {
+      "name": "BookingShare"
+    },
+    {
+      "name": "Subscription"
+    },
+    {
+      "name": "CreditBalance"
+    },
+    {
+      "name": "CreditTransaction"
+    },
+    {
+      "name": "Invoice"
+    },
+    {
+      "name": "ProcessedStripeEvent"
+    },
+    {
+      "name": "SupportTicket"
+    },
+    {
+      "name": "TicketComment"
+    },
+    {
+      "name": "Announcement"
+    },
+    {
       "name": "Organization"
+    },
+    {
+      "name": "FsmIntegration"
     },
     {
       "name": "User"
@@ -432,6 +1853,36 @@
     },
     {
       "name": "UnassignedJob"
+    },
+    {
+      "name": "Skill"
+    },
+    {
+      "name": "Tag"
+    },
+    {
+      "name": "CompanyInfo"
+    },
+    {
+      "name": "CompanySchedule"
+    },
+    {
+      "name": "ServiceArea"
+    },
+    {
+      "name": "JobType"
+    },
+    {
+      "name": "Job"
+    },
+    {
+      "name": "Visit"
+    },
+    {
+      "name": "Equipment"
+    },
+    {
+      "name": "SalesforceRecordMapping"
     }
   ]
 }
