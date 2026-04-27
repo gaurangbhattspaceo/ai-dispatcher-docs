@@ -11,8 +11,8 @@ The Jobs page is your dispatch queue — it shows all jobs imported from your FS
 
 Navigate to **Dashboard → Jobs** to open the dispatch queue.
 
-<Frame caption="The Jobs page showing the dispatch queue with Ready, Warnings, and Issues jobs">
-  <img src="/images/screenshots/jobs-list.png" alt="Jobs dispatch queue page" />
+<Frame caption="The Jobs page showing the dispatch queue with Queue, AI Dispatched, and Confirmed tabs">
+  <img src="/images/screenshots/jobs-page.png" alt="Jobs dispatch queue page" />
 </Frame>
 
 ## Queue Tabs
@@ -35,6 +35,18 @@ After a sync, a confirmation banner appears showing:
 - Total jobs imported
 - How many are **Ready**, **Warnings**, and **Not Ready**
 - Any sync errors
+
+## Type Filter
+
+Use the filter bar above the job table to filter by job type:
+
+| Filter | Shows |
+|--------|-------|
+| **All** | Every job in the current tab |
+| **One-off** | Single-occurrence jobs |
+| **Recurring** | Repeating jobs with multiple scheduled visits |
+
+Recurring jobs show a **Repeat** icon and expand to reveal individual visit rows when clicked. One-off jobs show a **Calendar** icon.
 
 ## Technician Readiness Summary
 
@@ -122,6 +134,13 @@ The job table shows up to 50 jobs per page. Use the **Previous** and **Next** bu
 | **[N] warnings** | Non-critical issues; job can still be dispatched |
 | **[N] issues** | Missing required data — cannot dispatch until resolved |
 | **Pending** | Readiness check not yet completed |
+| **Processing** | Job is being optimized by the AI |
+| **Suggested** | AI has made an assignment suggestion — review and accept or reject |
+| **No Match Found** | AI could not find an available technician with the required skills |
+| **Rejected** | You rejected the AI's suggestion |
+| **Processing Error** | Something went wrong during optimization |
+| **Scheduled** | Visit has been confirmed and written back to your FSM |
+| **Cancelled** | Visit was cancelled |
 
 ## Priority Badges
 
@@ -129,3 +148,32 @@ The job table shows up to 50 jobs per page. Use the **Previous** and **Next** bu
 |-------|---------|
 | **Emergency** | Highest priority — urgent response required |
 | **Urgent** | Elevated priority — should be dispatched before standard jobs |
+
+## AI Dispatched Tab — Visit Actions
+
+When you expand a job in the **AI Dispatched** tab, each scheduled visit appears as a separate row with its own action buttons:
+
+| Button | When It Appears | What It Does |
+|--------|----------------|--------------|
+| **Accept** (green) | Visit has an AI suggestion ready | Locks in the assignment and writes it to your FSM |
+| **Reject** (red) | Visit has an AI suggestion ready | Opens a reason dialog — select why you're rejecting, then the visit is unassigned |
+| **Resync** (blue) | Visit was previously rejected, unassigned, or failed | Re-sends the visit to the AI optimizer for a new suggestion |
+| **Cancel** (red outline) | Visit is in Suggested or Scheduled state | Removes the assignment — technician is unassigned, slot is freed |
+
+For **recurring jobs**, expanding the job row reveals all scheduled visits (e.g., "JOBNBR-V1", "JOBNBR-V2"). Each visit can be accepted, rejected, resynced, or cancelled independently.
+
+If a visit was reshuffled by the optimizer, it shows a **Reshuffled** badge.
+
+## Batch Actions in AI Dispatched Tab
+
+When you select one or more job rows, the batch action bar appears:
+
+- **Accept (N)** — Accept all AI suggestions for the selected jobs at once
+- **Reject (N)** — Reject all suggestions for the selected jobs
+- **Resync** — Re-send all selected jobs to the optimizer (useful after fixing an issue)
+
+Batch actions process jobs server-side and show a summary of what succeeded, failed, or was skipped.
+
+<Note>
+Jobs with no AI suggestion yet (still Processing) cannot be accepted or rejected — wait for the optimizer to finish, then refresh the tab.
+</Note>
