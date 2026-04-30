@@ -11,7 +11,7 @@ The Calendar is your day-to-day scheduling hub. See every technician's schedule 
 Navigate to **Dashboard → Calendar** to open it.
 
 <Frame caption="The Dispatch Calendar showing technician schedules with AI suggestions overlaid">
-  <img src="/images/screenshots/calendar-page.png" alt="Calendar week view with technician schedules" />
+  <img src="/images/screenshots/calendar-page-v3.png" alt="Calendar week view with technician schedules" />
 </Frame>
 
 ## View Modes
@@ -82,6 +82,14 @@ In the right panel **AI** tab, click **Accept All** or **Reject All** next to a 
 <Tip>
 Use the **Accept All** button at the top of the AI panel to confirm every suggestion at once when you trust the AI's plan.
 </Tip>
+
+## Customer Arrival Window
+
+When viewing an AI suggestion on the calendar, the job detail card shows the **Customer Arrival Window** — the specific time range the customer said they can accept a technician. This replaces the previous "Customer Preferred Time" label.
+
+The arrival window is derived from the optimizer's planning data and reflects a realistic slot based on technician availability, travel time, and the customer's published windows. If no specific window was set, the card falls back to showing "Customer Preferred Time" with the original date/time range.
+
+For bookings created via public booking links, the customer picks a time slot at booking time, and that window appears here. Confirmed bookings show a **Customer Confirmed** indicator; pending ones show **Awaiting Customer**.
 
 ## The Right Panel
 

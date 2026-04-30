@@ -12,7 +12,7 @@ The Jobs page is your dispatch queue — it shows all jobs imported from your FS
 Navigate to **Dashboard → Jobs** to open the dispatch queue.
 
 <Frame caption="The Jobs page showing the dispatch queue with Queue, AI Dispatched, and Confirmed tabs">
-  <img src="/images/screenshots/jobs-page.png" alt="Jobs dispatch queue page" />
+  <img src="/images/screenshots/jobs-page-v2.png" alt="Jobs dispatch queue page" />
 </Frame>
 
 ## Queue Tabs
@@ -107,6 +107,10 @@ Once jobs are sent to the optimizer, they appear in the **AI Dispatched** tab. E
 - Estimated arrival and departure time
 - Dispatch timestamp
 
+For jobs created from a public booking link, a badge may appear below the status column:
+- **Customer Confirmed** (green) — the customer confirmed their preferred time slot
+- **Awaiting Customer** (amber) — the customer hasn't confirmed yet; the slot is tentatively held
+
 <Note>
 The **Assigned To** column shows **Pending...** while the optimizer is still working. Refresh the tab after a few seconds to see the assigned technician.
 </Note>
@@ -166,13 +170,15 @@ If a visit was reshuffled by the optimizer, it shows a **Reshuffled** badge.
 
 ## Batch Actions in AI Dispatched Tab
 
-When you select one or more job rows, the batch action bar appears:
+When you select one or more job rows in the **AI Dispatched** tab, the action bar changes to show three buttons:
 
-- **Accept (N)** — Accept all AI suggestions for the selected jobs at once
-- **Reject (N)** — Reject all suggestions for the selected jobs
-- **Resync** — Re-send all selected jobs to the optimizer (useful after fixing an issue)
+- **Accept (N)** — Accept all AI suggestions for the selected jobs at once. Writes all assignments back to your FSM in a single operation.
+- **Reject (N)** — Reject all suggestions for the selected jobs. Opens a confirmation dialog before processing.
+- **Resync** — Re-send all selected jobs to the optimizer (useful after fixing an issue in your FSM).
 
-Batch actions process jobs server-side and show a summary of what succeeded, failed, or was skipped.
+The batch action bar shows how many jobs are currently selected, so you know exactly what will be affected.
+
+After you run a batch action, a toast notification reports the outcome: how many succeeded, how many are awaiting customer confirmation, how many were skipped (no active suggestion), and how many failed.
 
 <Note>
 Jobs with no AI suggestion yet (still Processing) cannot be accepted or rejected — wait for the optimizer to finish, then refresh the tab.
