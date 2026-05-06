@@ -1,5 +1,5 @@
 {
-  "scannedAt": "2026-04-30T08:00:03.337Z",
+  "scannedAt": "2026-05-06T08:00:09.597Z",
   "codebasePath": "/home/ubuntu/ai-dispatcher",
   "routes": [
     {
@@ -243,7 +243,8 @@
       "path": "/api/agents/[agentId]",
       "methods": [
         "GET",
-        "PATCH"
+        "PATCH",
+        "DELETE"
       ],
       "file": "src/app/api/agents/[agentId]/route.ts"
     },
@@ -833,6 +834,13 @@
         "GET"
       ],
       "file": "src/app/api/housecallpro/callback/route.ts"
+    },
+    {
+      "path": "/api/housecallpro/connect",
+      "methods": [
+        "POST"
+      ],
+      "file": "src/app/api/housecallpro/connect/route.ts"
     },
     {
       "path": "/api/housecallpro/disconnect",

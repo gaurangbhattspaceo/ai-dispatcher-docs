@@ -1,35 +1,54 @@
 ---
 title: HouseCall Pro
 sidebarTitle: HouseCall Pro
-description: Connect your HouseCall Pro account via OAuth to sync jobs and push dispatch assignments automatically
+description: Connect your HouseCall Pro account to sync jobs and push dispatch assignments automatically
 ---
 
 {/* AUTO-GENERATED — This page is maintained by the docs-agent. Manual edits below this line will be preserved. */}
 
-This page shows you how to connect your HouseCall Pro account to AI Dispatcher. Like Jobber, HouseCall Pro uses **OAuth sign-in** — a secure authorization flow where you approve access directly in HouseCall Pro without sharing passwords.
+This page shows you how to connect your HouseCall Pro account to AI Dispatcher. HouseCall Pro uses a **personal API key** connection — you paste your key directly into AI Dispatcher to link your accounts.
 
-<Frame caption="The Connected Apps page where you manage your HouseCall Pro connection">
-  <img src="/images/screenshots/settings-connected-apps.png" alt="Connected Apps settings page" />
+<Frame caption="The Connectors page where you manage your HouseCall Pro connection">
+  <img src="/images/screenshots/connectors-page.png" alt="Connectors settings page" />
 </Frame>
 
 ## Before You Start
 
-You need a HouseCall Pro account with admin access. No API tokens needed.
+You need:
+- A HouseCall Pro account with admin access
+- Your personal API key from HouseCall Pro (see steps below)
+
+No OAuth or external authorization popups are needed.
+
+## How to Find Your HouseCall Pro API Key
+
+<Steps>
+  <Step title="Open API & Webhooks in HouseCall Pro">
+    In HouseCall Pro, go to **Settings → API & Webhooks**.
+  </Step>
+  <Step title="Copy your personal API key">
+    Copy the long string shown under **Personal API Key**. It looks like a random token (letters, numbers, and dashes).
+  </Step>
+</Steps>
+
+<Tip>
+If you don't see an API key listed, your HouseCall Pro plan may not include API access. Contact HouseCall Pro support to enable it.
+</Tip>
 
 ## How to Connect HouseCall Pro
 
 <Steps>
-  <Step title="Open Connected Apps">
-    In AI Dispatcher, go to **Settings → Connected Apps** in the left sidebar.
+  <Step title="Open Connectors">
+    In AI Dispatcher, go to **Settings → Connectors** in the left sidebar.
   </Step>
   <Step title="Click Connect HouseCall Pro">
     Find the HouseCall Pro tile and click **Connect HouseCall Pro**.
   </Step>
-  <Step title="Authorize in the HouseCall Pro popup">
-    A HouseCall Pro authorization window will open. Sign in if prompted, then click **Allow** to grant AI Dispatcher access.
+  <Step title="Paste your API key">
+    In the dialog that appears, paste your HouseCall Pro personal API key and click **Connect**.
   </Step>
   <Step title="You're connected">
-    The popup closes and you're returned to AI Dispatcher. HouseCall Pro begins syncing your jobs, customers, and technician availability immediately.
+    AI Dispatcher validates your key and completes the connection. HouseCall Pro begins syncing your jobs, customers, and technician availability immediately.
   </Step>
 </Steps>
 
@@ -67,13 +86,13 @@ To pull in the latest jobs on demand:
 
 ## Disconnecting HouseCall Pro
 
-Go to **Settings → Connected Apps**, find HouseCall Pro, and click **Disconnect**. This revokes the access token and stops syncing. Your HouseCall Pro account is not affected.
+Go to **Settings → Connectors**, find HouseCall Pro, and click **Disconnect**. This revokes the access token and stops syncing. Your HouseCall Pro account is not affected.
 
 ## Common Questions
 
 <AccordionGroup>
-  <Accordion title="The authorization popup was blocked by my browser">
-    Allow popups for AI Dispatcher in your browser settings, then try connecting again. Most browsers show a notification in the address bar when a popup is blocked — click it and select "Always allow."
+  <Accordion title="The connection failed with an invalid API key error">
+    Make sure you copied the full key — it should be a long string with letters, numbers, and dashes. The key must come from HouseCall Pro → Settings → API & Webhooks (not a different settings area). If you're unsure, generate a new key in HouseCall Pro and use that.
   </Accordion>
   <Accordion title="My jobs aren't appearing after connecting">
     Go to the Jobs page and click **Sync from HouseCall Pro** to force a manual import. Jobs must be in an open or scheduled state in HouseCall Pro to appear in AI Dispatcher.
@@ -83,5 +102,8 @@ Go to **Settings → Connected Apps**, find HouseCall Pro, and click **Disconnec
   </Accordion>
   <Accordion title="Can I connect HouseCall Pro alongside another integration?">
     Each organization can have one active integration at a time. To switch from another platform to HouseCall Pro, disconnect the current integration first, then connect HouseCall Pro.
+  </Accordion>
+  <Accordion title="I previously connected via an authorization popup — do I need to reconnect?">
+    If your connection is working, no action is needed. If you're asked to reconnect, use the API key method described above instead of the old OAuth popup.
   </Accordion>
 </AccordionGroup>
